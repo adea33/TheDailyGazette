@@ -68,6 +68,11 @@
                     </fieldset>     
                  </div>
             </div>
+            <div class="breaking-widget">
+                <div class="">
+                    
+                </div>
+            </div>
         </div>
 
         <div class="box">
@@ -87,6 +92,16 @@
                         </div>
                     </fieldset>     
                  </div>
+            </div>
+            <div class="book-widget">
+                <div class="">
+                    <div id="recs"><h3><i>Book recomandations</i></h3></div>
+                    <div>
+                        <img class="image" src="crime.webp" alt="Image 1">
+                        <img class="image" src="perf.jpg" alt="Image 2">
+                        <img class="image" src="a.jpeg" alt="Image 3">
+                    </div>
+                </div>
             </div>
         </div>
     </main>
@@ -118,5 +133,24 @@
             <p>Copyright 2023 The Daily Gazette Company. All rights reserved.</p>
         </div>
     </footer>
+
+    <script>
+        function changeImage() {
+          var images = document.getElementsByClassName('image');
+      
+          for (var i = 0; i < images.length; i++) {
+            images[i].style.display = 'none';
+          }
+      
+          var currentIndex = (imageIndex + 1) % images.length;
+      
+       
+          images[currentIndex].style.display = 'block';
+      
+          imageIndex = currentIndex;
+        }
+        var imageIndex = 0;
+        setInterval(changeImage, 4000);
+      </script>
 </body>
 </html>
