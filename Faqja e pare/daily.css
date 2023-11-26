@@ -81,7 +81,7 @@ hr{
 }
 fieldset{
     background-color: #d5ddcd;
-    width: 900px;
+    width: 1100px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -96,7 +96,7 @@ fieldset:hover{
     flex-direction: column;
 }
 .rubrika{
-    width: 900px;
+    width: 1100px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -110,15 +110,8 @@ fieldset:hover{
 
 
 
-.permifooter{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-}
-
 footer{
     background-color: #9aab89;
-    
     margin-top: 30px;
 }
 .f{
