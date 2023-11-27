@@ -1,0 +1,254 @@
+body{
+    background-color: #d5ddcd;
+}
+
+header{
+    background-color: #9aab89;
+    border-radius: 10px;
+}
+
+a{
+    text-decoration: none;
+    color: inherit;
+}
+
+.headeri{
+    display:flex;
+    flex-direction: row;
+}
+.title{
+    font-size: large;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    display:flex;
+    justify-content: center;
+    color: #233833;
+}
+hr{
+    width: 1000px;
+    
+}
+.menu{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.sektoret{
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    list-style: none;
+}
+.sek{
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    padding: 11px;
+    margin: 10px;
+    background-color: #415b41;
+    color: #d5ddcd;
+    border-radius: 12px;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+.sek:hover{
+    background-color: #d5ddcd;
+    color: #233833;
+}
+.login{
+    margin-right: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    list-style: none;
+}
+.log{
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    padding: 11px;
+    margin: 10px;
+    background-color:#233833;
+    color: #d5ddcd;
+    border-radius: 12px;
+}
+.log:hover{
+    background-color: #d5ddcd;
+    color: #233833;
+}
+.title2{
+    font-size: large;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    display:flex;
+    justify-content: center;
+    justify-content: space-around;
+    color: #233833;
+}
+
+.in{
+    height: 0.5px;
+    width: 550px;
+    border-color: #233833;
+    margin-top: 40px;
+}
+
+.first{
+    display: flex;
+    flex-direction: row;
+    margin-top: 15px;
+}
+
+.col1{
+    border-right: 0.5px solid;
+    border-color: #233833;
+    display: flex;
+    flex-direction: column;
+    height: 1150px;
+    width: 950px;
+    margin: 5px;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+}
+
+
+.col2{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 1000px;
+    width: 440px;
+    margin: 5px;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    padding-left: 10px;
+    padding-top: 10px;
+}
+
+.box{
+    border-bottom: 0.5px solid;
+    border-color: #233833;
+    display: flex;
+    flex-direction: row;
+    height: auto;
+    width: 940px;
+    margin: 5px;
+    align-items: center;
+    justify-content: space-around;
+}
+.sdi{
+    display: flex;
+    flex-direction: column;
+}
+#text{
+    width: 590px;
+}
+.foto1{
+    width: 300px;
+    height: 200px;
+}
+
+.box2{
+    display: flex;
+    flex-direction: column;
+    border-bottom: 0.5px solid;
+    border-color: #233833;
+    padding-top: 20px;
+    justify-content: space-around;
+}
+.foto2{
+    width: 400px;
+    height: 230px;
+    margin: 10px;
+}
+#s{
+    display: flex;
+    flex-direction: row;
+    border-bottom: none;
+}
+.subscribe{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-style: italic;
+    color: #233833;
+    display: flex;
+    flex-direction: column;
+}
+.sub{
+    padding: 15px;
+    padding-left: 20px;;
+    padding-right: 20px;
+    background-color:#233833;
+    color: #d5ddcd;
+    border-radius: 12px;
+    margin: 20px;
+}
+.sub:hover{
+    background-color: #d5ddcd;
+    color: #233833;
+    border: solid;
+    border-color: #233833;
+}
+
+
+
+
+.permifooter{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+footer{
+    background-color: #9aab89;
+    
+    margin-top: 30px;
+}
+.f{
+    color:#233833;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+.ff{
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+.a{
+    display: flex;
+    justify-content: center;
+    margin:10px;
+    height: 25px;
+    width: 25px;
+}
+.footermain{
+    color: #d5ddcd;
+    display: flex;
+    justify-content: space-around;
+
+}
+.footerleft{
+    display:flex;
+    flex-wrap: wrap;
+    width:300px;
+}
+.footerright{
+    margin-left: 150px;
+}
+.fundi{
+    color: #d5ddcd;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+.match{
+    border-radius: 5px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+   padding-left: 50px;
+   padding-right: 50px;
+   padding-top: 50px;
+    width: 250px;
+    height: 200px;
+    background-color: #415b41;
+    color: #9aab89;
+    line-height: 150px;
+    font-size: 15px;
+}
+.photomatch{
+    width: 50px;
+    height: 50px;
+}
