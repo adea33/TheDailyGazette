@@ -262,7 +262,7 @@ div.active {
     background-color: #d5ddcd;
 }
 .boxes{
-    height: 200px;
+    height: 190px;
     width: 260px;
     position:absolute;
     top: 0;
@@ -271,6 +271,10 @@ div.active {
     transition: opacity 0.5s ease-in-out;
     display: flex;
     align-items: center;
+    border: double;
+    box-shadow: 10px 10px 10px #233833;
+    border-radius: 10px;
+    border-color: #233833;
 }
 .p{
     color: #d5ddcd;

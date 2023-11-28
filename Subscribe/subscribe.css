@@ -9,7 +9,7 @@
 
 .in{
     height: 0.5px;
-    width: 550px;
+    width: 650px;
     border-color: #233833;
     margin-top: 40px;
 }
@@ -43,10 +43,7 @@
     border: solid 1px;
     outline: none;
 }
-a{
-    background-color: #d5ddcd;
-    padding: 10px;
-}
+
 .konfirmimi{
     width:300px;
     height: 30px;
