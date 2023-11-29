@@ -4,6 +4,7 @@ body{
     justify-content: center;
     background-color: #d5ddcd;
     flex-direction: column;
+    flex-wrap: wrap;
 }
 .title{
     font-size: large;
