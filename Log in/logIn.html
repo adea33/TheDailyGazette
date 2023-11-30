@@ -18,22 +18,18 @@
             </ul>
     </header>
 
-    <!--  
-        file:///C:/Users/Enkela%20Bu%C3%A7inca/Desktop/signInForm.html
-    -->
-
         <div class="margjina">
-        <form >
+        <form onsubmit="return validimi()">
             <h1>Log in</h1>
           
         <div class="tekstet">
             <h4><b>Email</b></h4>
-            <p> <input type="text" placeholder="email"></p>
+            <p> <input type="text" placeholder="email" id="email"></p>
         </div>
 
         <div class="tekstet">
             <h4><b>Password</b></h4>
-            <p><input type="password" placeholder="******"></p>
+            <p><input type="password" placeholder="******" id="password"></p>
         </div>
             
 
@@ -42,7 +38,25 @@
     </div>
         </form>
     </div>    
+    <script>
+        document.addEventListener("DOMContentLoaded");
+function validimi(){
     
+   
+    var email=document.getElementById('email').value;
+    var password=document.getElementById('password').value;
+
+    
+    if(!(email.includes("@")) ){
+        alert('Shkruani nje email valide!');
+        return false;
+    }
+    else{
+        alert('Ju u loguat me sukses');
+        return true;
+    }
+}
+    </script>
 </body>
 <footer>
         <div class="f">
