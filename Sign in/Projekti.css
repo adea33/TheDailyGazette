@@ -55,8 +55,9 @@ a{
     justify-content:center ;
     align-items: center;
     background-color:#9aab89;
-    width:1300px;
+    width:750px;
     text-align: left;
+    box-shadow: 2px 2px #415b41;
 }
 h4, h1{
     display: flex;
