@@ -1,5 +1,6 @@
 body{
     background-color: #d5ddcd;
+    font-family:Vidaloka;
 }
 
 header{
@@ -18,7 +19,6 @@ a{
 }
 .title{
     font-size: large;
-    font-family:Georgia, 'Times New Roman', Times, serif;
     display:flex;
     justify-content: center;
     color: #233833;
@@ -39,7 +39,6 @@ hr{
     list-style: none;
 }
 .sek{
-    font-family:Georgia, 'Times New Roman', Times, serif;
     padding: 11px;
     margin: 10px;
     background-color: #415b41;
@@ -47,6 +46,7 @@ hr{
     border-radius: 12px;
     padding-left: 30px;
     padding-right: 30px;
+    transition: background-color 0.15s;
 }
 .sek:hover{
     background-color: #d5ddcd;
@@ -60,12 +60,12 @@ hr{
     list-style: none;
 }
 .log{
-    font-family:Georgia, 'Times New Roman', Times, serif;
     padding: 11px;
     margin: 10px;
     background-color:#233833;
     color: #d5ddcd;
     border-radius: 12px;
+    transition: background-color 0.15s;
 }
 .log:hover{
     background-color: #d5ddcd;
@@ -74,7 +74,6 @@ hr{
 
 .title2{
     font-size: large;
-    font-family:Georgia, 'Times New Roman', Times, serif;
     display:flex;
     justify-content: center;
     justify-content: space-around;
@@ -102,7 +101,6 @@ hr{
     height: 1150px;
     width: 950px;
     margin: 5px;
-    font-family:Georgia, 'Times New Roman', Times, serif;
 }
 
 
@@ -112,7 +110,6 @@ hr{
     height: 1000px;
     width: 440px;
     margin: 5px;
-    font-family:Georgia, 'Times New Roman', Times, serif;
     padding-left: 10px;
 }
 
@@ -157,7 +154,6 @@ hr{
     border-bottom: none;
 }
 .subscribe{
-    font-family: Georgia, 'Times New Roman', Times, serif;
     font-style: italic;
     color: #233833;
     display: flex;
@@ -171,6 +167,7 @@ hr{
     color: #d5ddcd;
     border-radius: 12px;
     margin: 20px;
+    transition: background-color 0.15s;
 }
 .sub:hover{
     background-color: #d5ddcd;

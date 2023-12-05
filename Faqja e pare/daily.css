@@ -1,7 +1,21 @@
 body{
     background-color: #d5ddcd;
+    font-family:Vidaloka;
 }
-
+/*
+@media screen and (max-width: 900px) {
+    body{
+    display: flex;
+    flex-wrap: wrap;
+    }
+}
+@media screen and (max-width: 600px) {
+    body{
+        display: flex;
+        flex-wrap: wrap;
+    }
+}
+*/
 header{
     background-color: #9aab89;
     border-radius: 10px;
@@ -22,7 +36,6 @@ legend{
 }
 .title{
     font-size: large;
-    font-family:Georgia, 'Times New Roman', Times, serif;
     display:flex;
     justify-content: center;
     color: #233833;
@@ -50,7 +63,8 @@ hr{
     border-radius: 12px;
     padding-left: 30px;
     padding-right: 30px;
-    font-family:Georgia, 'Times New Roman', Times, serif;
+    transition: background-color 0.15s;
+
 }
 .sek:hover{
     background-color: #d5ddcd;
@@ -69,7 +83,7 @@ hr{
     background-color:#233833;
     color: #d5ddcd;
     border-radius: 12px;
-    font-family:Georgia, 'Times New Roman', Times, serif;
+    transition: background-color 0.15s;
 }
 .log:hover{
     background-color: #d5ddcd;
@@ -96,7 +110,6 @@ hr{
     justify-content: space-between;
     align-items: center;
     margin-right: 10px;
-    font-family:Georgia, 'Times New Roman', Times, serif;
     border-top: 0.5px solid;
     border-bottom: 0.5px solid;
     border-color: #233833;
@@ -219,7 +232,6 @@ footer{
 
 
 .breaking-widget {
-    font-family: Georgia, 'Times New Roman', Times, serif;
     background-color:#9aab89;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -293,9 +305,6 @@ div.active {
     text-align: center;
     display: flex;
     justify-content: center;
-}
-#recs{
-    font-family: Georgia, 'Times New Roman', Times, serif;
 }
 .image {
     display: flex;

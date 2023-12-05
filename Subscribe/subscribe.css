@@ -1,6 +1,8 @@
+body{
+    font-family:Vidaloka;
+}
 .title2{
     font-size: large;
-    font-family:Georgia, 'Times New Roman', Times, serif;
     display:flex;
     justify-content: center;
     justify-content: space-around;
@@ -24,11 +26,8 @@
     align-items: center;
     flex-direction: column;
     padding: 20px;
-    font-family: 'Times New Roman', Times, serif;
     background-color:#9aab89;
-
 }
-
 .kartelat img{
     width: 50px;
     padding: 10px;
@@ -128,7 +127,6 @@ a{
 }
 .title{
     font-size: large;
-    font-family:Georgia, 'Times New Roman', Times, serif;
     display:flex;
     justify-content: center;
     color: #233833;
@@ -156,7 +154,7 @@ hr{
     border-radius: 12px;
     padding-left: 30px;
     padding-right: 30px;
-    font-family:Georgia, 'Times New Roman', Times, serif;
+    transition: background-color 0.15s;
 }
 .sek:hover{
     background-color: #d5ddcd;
@@ -175,7 +173,7 @@ hr{
     background-color:#233833;
     color: #d5ddcd;
     border-radius: 12px;
-    font-family:Georgia, 'Times New Roman', Times, serif;
+    transition: background-color 0.15s;
 }
 .log:hover{
     background-color: #d5ddcd;
@@ -239,7 +237,6 @@ fieldset{
     justify-content: space-between;
     margin-right: 10px;
     border-radius: 10px;
-    font-family:Georgia, 'Times New Roman', Times, serif;
 }
 fieldset:hover{
     color: #415b41;
@@ -282,7 +279,6 @@ body{
     height: 500px;
     width: 440px;
     margin: 5px;
-    font-family:Georgia, 'Times New Roman', Times, serif;
     padding-left: 10px;
 }
 .box{

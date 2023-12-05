@@ -5,6 +5,7 @@ body{
     background-color: #d5ddcd;
     flex-direction: column;
     flex-wrap: wrap;
+    font-family:Vidaloka;
 }
 header{
     display: flex;
@@ -12,7 +13,6 @@ header{
 }
 .title{
     font-size: large;
-    font-family:Georgia, 'Times New Roman', Times, serif;
     display:flex;
     justify-content: center;
     color: #233833;
@@ -36,6 +36,7 @@ header{
     padding-left: 60px;
     padding-right: 60px;
     font-size: large;
+    transition: background-color 0.15s;
 }
 .sek:hover{
     background-color: #d5ddcd;
