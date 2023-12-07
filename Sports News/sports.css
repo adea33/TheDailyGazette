@@ -147,6 +147,8 @@ hr{
     height: 230px;
     margin: 10px;
     padding-right: 60px;
+    display: flex;
+    align-items: center;
 }
 #t{
     display: flex;
@@ -247,7 +249,7 @@ footer{
     color: #9aab89;
     line-height: 150px;
     font-size: 1.3em;
-    box-shadow: 2px 2px #233833;
+    box-shadow: 5px 5px 5px #233833 inset;
 }
 .photomatch{
     width: 50px;
