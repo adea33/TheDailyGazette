@@ -22,17 +22,17 @@
     </header>
 
         <div class="margjina">
-        <form  id="signInForm" onsubmit="return validimi()" >
+        <form  id="signInForm" onsubmit="return validimi()">
             <h1>Sign up</h1>
             <div class="tekstet">
             <h4> <b>Name</b></h4>
             
-            <p> <input type="text"  name="name" placeholder="name" id="name" ></p>
+            <p> <input type="text"  name="name" placeholder="name" id="name" required ></p>
             </div>
 
             <div class="tekstet">
                 <h4><b>Last Name</b></h4>
-            <p> <input type="text" placeholder= "last name"  id="lastname" ></p>
+            <p> <input type="text" placeholder= "last name"  id="lastname" required></p>
         </div>
 
             <div class="tekstet">
@@ -53,14 +53,14 @@
 
         <div class="tekstet">
             <h4><b>Email</b></h4>
-            <p> <input type="text" placeholder="email"  id="email" ></p>
+            <p> <input type="text" placeholder="email"  id="email" required></p>
         </div>
 
         <div class="tekstet">
             <h4><b>Password</b></h4>
-            <p><input type="password" placeholder="******"   id="password" ></p>
+            <p><input type="password" placeholder="******"   id="password" required></p>
             <h4><b>Confirm Password</b></h4>
-            <p><input type="password" placeholder="******"   id="confirmpassword" ></p>
+            <p><input type="password" placeholder="******"   id="confirmpassword" required></p>
         </div>
         <div >
             <p><input type="radio" > <b>I agree to the terms and conditions</b></p>
