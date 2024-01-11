@@ -1,6 +1,8 @@
 body{
     font-family:Vidaloka;
+    background-color: white;
 }
+/* f1f4ee */
 .title2{
     font-size: large;
     display:flex;
@@ -18,7 +20,7 @@ body{
 .sub{
     
     width: 600px;
-    height: 500px;
+    height: auto;
     border:2px solid;
     border-color: #233833;
     display: flex;
@@ -38,7 +40,6 @@ body{
     width:300px;
     height: 30px;
     border-radius: 5px;
-    background-color: #d5ddcd; ;
     border: solid 1px;
     outline: none;
 }
@@ -47,7 +48,6 @@ body{
     width:300px;
     height: 30px;
     border-radius: 5px;
-    background-color: #d5ddcd; ;
     border: solid 1px;
     outline: none;
     text-align: center;
@@ -63,7 +63,6 @@ body{
 .data select{
     padding: 10px 20px;
     border-radius: 5px;
-    background-color: #d5ddcd; ;
     border: solid 1px;
     outline: none;
     text-align: center;
@@ -255,10 +254,6 @@ main{
     align-items: center;
     flex-direction: column;
 }
-body{
-    background-color: #d5ddcd;
-    flex-wrap: wrap;
-}
 .first{
     display: flex;
     flex-direction: row;
@@ -287,3 +282,7 @@ body{
 }
 
 
+.row{
+    display: flex;
+    flex-direction: row;
+}
