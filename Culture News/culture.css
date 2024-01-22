@@ -1,5 +1,5 @@
 body{
-    background-color: #d5ddcd;
+    background-color: #f1f4ee;
     font-family:Vidaloka;
 }
 
@@ -92,7 +92,11 @@ hr{
     flex-direction: row;
     margin-top: 15px;
 }
-
+@media screen and (max-width: 1024px) {
+    .first{
+        flex-wrap: wrap;
+    }
+}
 .col1{
     border-left: 0.5px solid;
     border-color: #233833;
@@ -102,8 +106,6 @@ hr{
     width: 950px;
     margin: 5px;
 }
-
-
 .col2{
     display: flex;
     flex-direction: column;
@@ -112,7 +114,14 @@ hr{
     margin: 5px;
     padding-left: 10px;
 }
-
+@media screen and (max-width: 1024px) {
+    .col2{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+}
 .box{
     border-bottom: 0.5px solid;
     border-color: #233833;
@@ -152,6 +161,27 @@ hr{
     display: flex;
     flex-direction: row;
     border-bottom: none;
+}
+@media screen and (max-width: 1024px){
+    .box2{  
+        flex-direction: row;
+        justify-content: center;
+        padding-left: 500px;
+        width: 700px;
+    }
+    .sdi{
+        display: flex;
+        flex-direction: column;
+    }
+    .foto2{
+        width: 340px;
+        height: 220px;
+        margin: 10px;
+        align-self: center;
+    }
+    #text{
+        width: 600px;
+    }
 }
 .subscribe{
     font-style: italic;

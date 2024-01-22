@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html>
 
-
 <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width", initial-scale="1.0">
@@ -14,12 +13,7 @@
 <body>
     <header>
         <div class="title"> 
-            <a href="../Faqja e pare/The Daily Gazette.html"><h1><i>The Daily Gazette</i></h1></a>
-        </div>
-        <div class="sektoret"></div>
-            <ul>
-                <li class="sek" ><a href="../Sign in/signInForm.html">Sign up</a></li>
-            </ul>
+            <a href="../Faqja e pare/The Daily Gazette.php"><h1><i>The Daily Gazette</i></h1></a>
         </div>
     </header>
 

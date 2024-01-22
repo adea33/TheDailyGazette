@@ -1,8 +1,7 @@
 body{
-    background-color: #d5ddcd;
+    background-color: #f1f4ee;
     font-family: Vidaloka;
 }
-
 header{
     background-color: #9aab89;
     border-radius: 10px;
@@ -86,10 +85,17 @@ hr{
     margin-top: 40px;
 }
 
+
 .first{
     display: flex;
     flex-direction: row;
     margin-top: 15px;
+}
+
+@media screen and (max-width: 1024px) {
+    .first{
+        flex-wrap: wrap;
+    }
 }
 
 .col1{
@@ -102,7 +108,6 @@ hr{
     margin: 5px;
 }
 
-
 .col2{
     display: flex;
     flex-direction: column;
@@ -111,7 +116,16 @@ hr{
     margin: 5px;
     padding-left: 10px;
 }
-
+@media screen and (max-width: 1024px) {
+    .col2{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-right: 0px;
+        margin-left: 200px;
+    }
+}
 .box{
     border-bottom: 0.5px solid;
     border-color: #233833;
@@ -123,6 +137,8 @@ hr{
     align-items: center;
     justify-content: space-around;
 }
+
+
 .sdi{
     display: flex;
     flex-direction: column;
@@ -141,11 +157,31 @@ hr{
     border-bottom: 0.5px solid;
     border-color: #233833;
 }
+.box2sdi{
+    display: flex;
+    flex-direction: column;
+}
 .foto2{
     width: 400px;
     height: 230px;
     margin: 10px;
 }
+@media screen and (max-width: 1024px){
+    .box2{  
+        flex-direction: row;
+    }
+    .box2sdi{
+        display: flex;
+        flex-direction: column;
+        width: 530px;
+    }
+    .foto2{
+        width: 340px;
+        height: auto;
+        margin: 10px;
+    }
+}
+
 #s{
     display: flex;
     flex-direction: row;

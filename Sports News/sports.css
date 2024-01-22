@@ -1,5 +1,5 @@
 body{
-    background-color: #d5ddcd;
+    background-color: #f1f4ee;
     font-family:Vidaloka;
 }
 
@@ -90,7 +90,11 @@ hr{
     flex-direction: row;
     margin-top: 15px;
 }
-
+@media screen and (max-width: 1024px) {
+    .first{
+        flex-wrap: wrap;
+    }
+}
 .col1{
     border-right: 0.5px solid;
     border-color: #233833;
@@ -100,8 +104,6 @@ hr{
     width: 950px;
     margin: 5px;
 }
-
-
 .col2{
     display: flex;
     flex-direction: column;
@@ -109,10 +111,18 @@ hr{
     height: fit-content;
     width: 440px;
     margin: 5px;
-    padding-left: 100px;
     padding-top: 10px;
 }
 
+@media screen and (max-width: 1024px) {
+    .col2{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding-left: 250px;
+    }
+}
 .box{
     border-bottom: 0.5px solid;
     border-color: #233833;
@@ -140,25 +150,26 @@ hr{
     display: flex;
     flex-direction: column;
     padding-top: 20px;
+    padding-left: 100px;
     justify-content: space-around;
 }
 .foto2{
     width: 350px;
     height: 230px;
     margin: 10px;
-    padding-right: 60px;
+    padding-right: 50px;
+    padding-left: 50px;
     display: flex;
     align-items: center;
 }
 #t{
     display: flex;
     justify-content: center;
-    padding-right: 90px;
+    padding-left: 40px;
 }
 #s{
     display: flex;
     flex-direction: row;
-    border-bottom: none;
 }
 .subscribe{
     font-style: italic;
@@ -182,10 +193,6 @@ hr{
     border: solid;
     border-color: #233833;
 }
-
-
-
-
 .permifooter{
     display: flex;
     flex-direction: row;
@@ -235,23 +242,45 @@ footer{
     flex-direction: row;
     justify-content: space-around;
 }
-.match{
-    border-radius: 5px;
+.match{  
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
-    padding-left: 50px;
-    padding-right: 50px;
-    padding-top: 50px;
-    width: 260px;
+    width: 280px;
     height: 170px;
     background-color: #415b41;
-    color: #9aab89;
-    line-height: 150px;
-    font-size: 1.3em;
+    color: #d1d8c9;
+    border-radius: 5px;
     box-shadow: 5px 5px 5px #233833 inset;
+    word-spacing: 5px;
+}
+.match h3{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
 }
 .photomatch{
     width: 50px;
     height: 50px;
+}
+.photobox{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.photobox img {
+    padding-left: 30px;
+    padding-right: 30px;
+}
+@media screen and (max-width: 1024px) {
+    .matches{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+    .box2{
+        padding-top: 0px;
+        padding-left: 25px;
+    }
 }

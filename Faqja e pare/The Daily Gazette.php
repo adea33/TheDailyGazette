@@ -10,25 +10,25 @@
 <body>
     <header>
         <div class="title">
-            <a href="The Daily Gazette.html"><h1><i>The Daily Gazette</i></h1></a>
+            <a href="The Daily Gazette.php"><h1><i>The Daily Gazette</i></h1></a>
         </div>
         <div class="menu">
         <ul class="sektoret">
-            <li class="sek"><a href="The Daily Gazette.html">Home</a></li>
-            <li class="sek"><a href="../International News/International News.html">International</a></li>
-            <li class="sek"><a href="../Culture News/Culture news.html">Culture</a></li>
-            <li class="sek"><a href="../Sports News/Sports News.html">Sports</a></li>
+            <li class="sek"><a href="The Daily Gazette.php">Home</a></li>
+            <li class="sek"><a href="../International News/International News.php">International</a></li>
+            <li class="sek"><a href="../Culture News/Culture news.php">Culture</a></li>
+            <li class="sek"><a href="../Sports News/Sports News.php">Sports</a></li>
         </ul>
         <ul class="login">
-            <li class="log"><a href="../Sign in/signInForm.html">Log in</a></li>
-            <li class="log"><a href="../Subscribe/Subscribe.html">Subscribe</a></li>
+            <li class="log"><a href="../Log in/logIn.php">Log in</a></li>
+            <li class="log"><a href="../Subscribe/Subscribe.php">Subscribe</a></li>
         </ul>
         </div>
     </header>
     <main>
         <div class="box">
             <div class="rubrika">
-                    <a href="../International News/International News.html">
+                    <a href="../International News/International News.php">
                         <div class="text">
                             <h3>International News</h3>
                             <h4> A look into the long history of the Israeli-Palestinian conflict</h4>
@@ -101,7 +101,7 @@
                     </div>
             </div>
             <div class="rubrika">
-                        <a href="../Culture News/Culture news.html">
+                        <a href="../Culture News/Culture news.php">
                         <div class="text">
                             <h3>Culture News</h3>
                             <h4>Vatican Museums Open Ancient Roman Necropolis to the Public for the First Time</h4>
@@ -120,7 +120,7 @@
 
         <div class="box">
             <div class="rubrika">
-                    <a href="../Sports News/Sports News.html">
+                    <a href="../Sports News/Sports News.php">
                         <div class="text">
                             <h3>Sports News</h3>
                             <h4>Manchester United are planning to offload at least 10 players in the next two transfer windows, according to reports.</h4>
@@ -135,7 +135,7 @@
             </div>
             <div class="book-widget">
                 <div class="">
-                    <div id="recs"><h3><i>Book recomandations</i></h3></div>
+                    <div id="recs"><h3><i>Book recommendations</i></h3></div>
                     <div>
                         <img class="image" src="crime.webp" alt="Image 1">
                         <img class="image" src="perf.jpg" alt="Image 2">

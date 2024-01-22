@@ -10,18 +10,18 @@
 <body>
     <header>
         <div class="title"> 
-            <a href="../Faqja e pare/The Daily Gazette.html"><h1><i>The Daily Gazette</i></h1></a>
+            <a href="../Faqja e pare/The Daily Gazette.php"><h1><i>The Daily Gazette</i></h1></a>
         </div>
         <div class="menu">
         <ul class="sektoret">
-            <li class="sek"><a href="../Faqja e pare/The Daily Gazette.html">Home</a></li>
-            <li class="sek"><a href="../International News/International News.html">International</a></li>
-            <li class="sek"><a href="../Culture News/Culture news.html">Culture</a></li>
-            <li class="sek"><a href="../Sports News/Sports News.html">Sports</a></li>
+            <li class="sek"><a href="../Faqja e pare/The Daily Gazette.php">Home</a></li>
+            <li class="sek"><a href="../International News/International News.php">International</a></li>
+            <li class="sek"><a href="../Culture News/Culture news.php">Culture</a></li>
+            <li class="sek"><a href="../Sports News/Sports News.php">Sports</a></li>
         </ul>
         <ul class="login">
-            <li class="log"><a href="../Sign in/signInForm.html">Log in</a></li>
-            <li class="log"><a href="../Subscribe/Subscribe.html">Subscribe</a></li>
+            <li class="log"><a href="../Log in/logIn.php">Log in</a></li>
+            <li class="log"><a href="../Subscribe/Subscribe.php">Subscribe</a></li>
         </ul>
         </div>
     </header>
@@ -76,7 +76,7 @@
                         <h3>Want to read more?</h3>
                         <h3>Subscribe to The Daily Gazette for <br>the best International, Culture and Sports news</h3>
                     </div>
-                    <div><a href="../Subscribe/Subscribe.html" class="sub">Subscribe</a></div>
+                    <div><a href="../Subscribe/Subscribe.php" class="sub">Subscribe</a></div>
                 </div>
             </div>
             <div class="col2">
@@ -84,51 +84,40 @@
                 <div id="t">
                     <h3>Matches of the day</h3>
                 </div>
-                        
-                <div class="box2">
-                        <div class="match">
-                          <p>Celtic</p> <p><img src="celticc.webp" alt="foto" class="photomatch"></p>
-                            
-                            
-                            <p>18:45</p>
-                            <p>
-                                <img src="lazio.webp" alt="foto" class="photomatch">
-                            </p>
-                            <p>Lazio</p>
-                           
-
-                        </div>
-                    </div>
-                        <div class="box2">
-                        <div class="match">
-                            <p>Paris</p> <p><img src="partis.webp" alt="foto" class="photomatch"></p>
-                              
-                              
-                              <p>21:00</p>
-                              <p>
-                                  <img src="newcastle.webp" alt="foto" class="photomatch">
-                              </p>
-                              <p>Newcastle</p>
-
-                          </div>
-                        </div>
+                    <div class="matches">  
                         <div class="box2">
                             <div class="match">
-                                <p>Milan</p> <p><img src="milan.webp" alt="foto" class="photomatch"></p>
-                                  
-                                  
-                                  <p>21:00</p>
-                                  <p>
-                                      <img src="dortmund.webp" alt="foto" class="photomatch">
-                                  </p>
-                                  <p>Dortmund</p>
-    
-                              </div>
+                                <div class="photobox">
+                                    <img src="celticc.webp" alt="foto" class="photomatch">
+                                    <img src="lazio.webp" alt="foto" class="photomatch">
+                                </div>
+                                <h3>Celtic &#8226; 18:45 &#8226; Lazio</h3> 
                             </div>
-                
-    
-            </div>
-        </div>   
+                        </div>
+
+                        <div class="box2">
+                            <div class="match">
+                                <div class="photobox">
+                                    <img src="partis.webp" alt="foto" class="photomatch">
+                                    <img src="newcastle.webp" alt="foto" class="photomatch">
+                                </div>
+                                <h3>Paris &#8226; 21:00 &#8226; Newcastle</h3>
+
+                            </div>
+                        </div>
+
+                        <div class="box2">
+                            <div class="match">
+                                <div class="photobox">
+                                    <img src="milan.webp" alt="foto" class="photomatch">
+                                    <img src="dortmund.webp" alt="foto" class="photomatch">
+                                </div>
+                                <h3>Milan &#8226; 21:00 &#8226; Dortmund</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>   
     </main>
 
     <footer>

@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -10,18 +11,18 @@
     <body>
         <header>
             <div class="title"> 
-                <a href="../Faqja e pare/The Daily Gazette.html"><h1><i>The Daily Gazette</i></h1></a>
+                <a href="../Faqja e pare/The Daily Gazette.php"><h1><i>The Daily Gazette</i></h1></a>
             </div>
             <div class="menu">
             <ul class="sektoret">
-                <li class="sek"><a href="../Faqja e pare/The Daily Gazette.html">Home</a></li>
-                <li class="sek"><a href="../International News/International News.html">International</a></li>
-                <li class="sek"><a href="Culture news.html">Culture</a></li>
-                <li class="sek"><a href="../Sports News/Sports News.html">Sports</a></li>
+                <li class="sek"><a href="../Faqja e pare/The Daily Gazette.php">Home</a></li>
+                <li class="sek"><a href="../International News/International News.php">International</a></li>
+                <li class="sek"><a href="Culture news.php">Culture</a></li>
+                <li class="sek"><a href="../Sports News/Sports News.php">Sports</a></li>
             </ul>
             <ul class="login">
-                <li class="log"><a href="../Sign in/signInForm.html">Log in</a></li>
-                <li class="log"><a href="../Subscribe/Subscribe.html">Subscribe</a></li>
+                <li class="log"><a href="../Log in/logIn.php">Log in</a></li>
+                <li class="log"><a href="../Subscribe/Subscribe.php">Subscribe</a></li>
             </ul>
             </div>
         </header>
@@ -90,7 +91,7 @@
                             <h3>Want to read more?</h3>
                             <h3>Subscribe to The Daily Gazette for <br>the best International, Culture and Sports news</h3>
                         </div>
-                        <div><a href="../Subscribe/Subscribe.html" class="sub">Subscribe</a></div>
+                        <div><a href="../Subscribe/Subscribe.php" class="sub">Subscribe</a></div>
                     </div>
                 </div>
             </div>   
@@ -126,3 +127,5 @@
         </footer>
     </body>
 </html>
+<?php
+?>

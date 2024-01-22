@@ -2,22 +2,15 @@ body{
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #d5ddcd;
+    background-color: #f1f4ee;
     flex-direction: column;
     flex-wrap: wrap;
     font-family: Vidaloka;
-}
-header{
-    display: flex;
-    flex-direction: row;
-    
-
 }
 .title{
     font-size: large;
     display:flex;
     justify-content: center;
-    padding-left: 500px;
     color: #233833;
 }
 .sektoret{
@@ -68,9 +61,7 @@ h4, h1{
     display: flex;
     justify-content: center;
 }
-
-
-
+b
 .tekstet input{
     
     width:300px;
@@ -81,18 +72,17 @@ h4, h1{
     outline: none;
 }
 .tekstet input::placeholder{
-
     font-size: 14px;
     color:#233833;
-    
-
 }
-
 
 footer{
     background-color: #9aab89;
     margin-top: 30px;
-    width:1500px;
+    position: static;
+    bottom: 0;
+    left: 0;
+    right: 0;
     
 }
 .f{

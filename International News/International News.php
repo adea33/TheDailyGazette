@@ -10,18 +10,18 @@
     <body>
         <header>
             <div class="title"> 
-                <a href="../Faqja e pare/The Daily Gazette.html"><h1><i>The Daily Gazette</i></h1></a>
+                <a href="../Faqja e pare/The Daily Gazette.php"><h1><i>The Daily Gazette</i></h1></a>
             </div>
             <div class="menu">
             <ul class="sektoret">
-                <li class="sek"><a href="../Faqja e pare/The Daily Gazette.html">Home</a></li>
-                <li class="sek"><a href="International News.html">International</a></li>
-                <li class="sek"><a href="../Culture News/Culture news.html">Culture</a></li>
-                <li class="sek"><a href="../Sports News/Sports News.html">Sports</a></li>
+                <li class="sek"><a href="../Faqja e pare/The Daily Gazette.php">Home</a></li>
+                <li class="sek"><a href="International News.php">International</a></li>
+                <li class="sek"><a href="../Culture News/Culture news.php">Culture</a></li>
+                <li class="sek"><a href="../Sports News/Sports News.php">Sports</a></li>
             </ul>
             <ul class="login">
-                <li class="log"><a href="../Sign in/signInForm.html">Log in</a></li>
-                <li class="log"><a href="../Subscribe/Subscribe.html">Subscribe</a></li>
+                <li class="log"><a href="../Log in/logIn.php">Log in</a></li>
+                <li class="log"><a href="../Subscribe/Subscribe.php">Subscribe</a></li>
             </ul>
             </div>
         </header>
@@ -66,23 +66,27 @@
                             <h3>Want to read more?</h3>
                             <h3>Subscribe to The Daily Gazette for <br>the best International, Culture and Sports news</h3>
                         </div>
-                        <div><a href="../Subscribe/Subscribe.html" class="sub">Subscribe</a></div>
+                        <div><a href="../Subscribe/Subscribe.php" class="sub">Subscribe</a></div>
                     </div>
                 </div>
                 <div class="col2">
                     <div class="box2">
                         <img src="2.webp" alt="foto" class="foto2">
+                        <div class="box2sdi">
                             <h3>Iceland volcano eruption likelihood remains high, possibly within 'just days'</h3>
                             <p>The likelihood that a volcanic eruption will engulf the fishing town of Grindavik, Iceland, is decreasing by the day, officials said on Friday, even as they continued to warn that an eruption could still occur.
                                 Grindavik, with more than 3,000 people, was evacuated this month after it was determined that a nine-mile-long underground river of magma was moving beneath the town to the ocean.
                                 Residents are now allowed to go home during the day to check on their properties and belongings but until scientists give the all-clear, people cannot permanently return, Jon Thor Viglundsson, a spokesman for Iceland’s Department of Civil Protection and Emergency Management, said.
                                 Seismic activity has caused Grindavik to sink and has damaged the sewage system. As a result, the town cannot access cold water, he said. “Sewage is a problem, and sewage lines are ruptured,” he added.</p>
+                        </div>
                     </div>
                     <div class="box2">
                         <img src="8.avif" alt="foto" class="foto2">
+                        <div class="box2sdi">
                             <h3>Ecuador's newly sworn-in president repeals guidelines allowing people to carry limited drug amounts</h3>
                             <p>Less than 48 hours into his term, Ecuador President Daniel Noboa on Friday repealed controversial guidelines established by the country’s left a decade ago that eliminated penalties for people found carrying illegal drugs under certain amounts.
                                 Noboa’s decision fulfilled a campaign promise to fight drug trafficking. Consequences of the illegal trade, particularly cocaine, have kept Ecuadorians on edge as killings, kidnappings, robberies, extortion and other crimes reached unprecedented levels.</p>
+                        </div>
                     </div>
                 </div>
             </div>   
