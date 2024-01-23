@@ -311,3 +311,12 @@ div.active {
     height: 200px;
     
 }
+.hideDash{
+    display: none;
+}
+.hideLog{
+    display: none;
+}
+.hideWrite{
+    display: none;
+}

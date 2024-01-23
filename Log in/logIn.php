@@ -1,3 +1,36 @@
+<?php
+  if(isset($_POST['loginbtn'])){
+    if(empty($_POST['username']) || empty($_POST['password'])){
+      echo "Please fill the required fields!";
+    }else{
+        //validate
+        $username = $_POST['username'];
+        $password = $_POST['password'];
+
+        include_once '../Users.php';
+        $i=0;
+        
+        foreach($users as $user){
+          if($user['username'] == $username && $user['password'] == $password){
+            session_start();
+      
+            $_SESSION['username'] = $username;
+            $_SESSION['password'] = $password;
+            $_SESSION['role'] = $user['role'];
+            $_SESSION['loginTime'] = date("H:i:s");
+            header("location: ../Faqja e pare/The Daily Gazette.php");
+            exit();
+          }else{
+            $i++;
+            if($i == sizeof($users)) {
+              echo "Incorrect Username or Password!";
+              exit();
+            }
+          }
+        }
+    }
+  }
+?>
 <!DOCTYPE html>
 <html>
 
@@ -15,25 +48,26 @@
         <div class="title"> 
             <a href="../Faqja e pare/The Daily Gazette.php"><h1><i>The Daily Gazette</i></h1></a>
         </div>
+        <div class="log"><a href="../Subscribe/Subscribe.php">Subscribe</a></div>
     </header>
 
         <div class="margjina">
-        <form onsubmit="return validimi()">
+        <form action="<?php echo $_SERVER['PHP_SELF'] ?>" method="POST" onsubmit="return validimi()">
             <h1>Log in</h1>
           
         <div class="tekstet">
-            <h4><b>Email</b></h4>
-            <p> <input type="text" placeholder="email" id="email"></p>
+            <h4><b>Username</b></h4>
+            <p> <input type="text" placeholder="username" id="username" name="username"></p>
         </div>
 
         <div class="tekstet">
             <h4><b>Password</b></h4>
-            <p><input type="password" placeholder="******" id="password"></p>
+            <p><input type="password" placeholder="******" id="password" name="password"></p>
         </div>
             
 
         <div class="tekstet">
-        <p><input type="submit"></p>
+        <p><input type="submit" name="loginbtn"></p>
     </div>
         </form>
     </div>    
@@ -42,12 +76,12 @@
 function validimi(){
     
    
-    var email=document.getElementById('email').value;
+    var email=document.getElementById('username').value;
     var password=document.getElementById('password').value;
 
     
-    if(!(email.includes("@")) ){
-        alert('Shkruani nje email valide!');
+    if((username.includes("@")) ){
+        alert('Shkruani nje username valide!');
         return false;
     }
     else{

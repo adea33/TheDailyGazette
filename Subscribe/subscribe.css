@@ -109,24 +109,23 @@ h4, h1{
 
 
 header{
-    background-color: #9aab89;
     border-radius: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 }
 
 a{
     text-decoration: none;
     color: inherit;
 }
-
-.headeri{
-    display:flex;
-    flex-direction: row;
-}
 .title{
     font-size: large;
     display:flex;
-    justify-content: center;
+    flex-direction: row;
+    justify-self: center;
     color: #233833;
+    padding-left: 620px;
 }
 hr{
     width: 1000px;
@@ -137,44 +136,21 @@ hr{
     flex-direction: row;
     justify-content: space-between;
 }
-.sektoret{
-    display: flex;
-    flex-direction: row;
-    justify-content: start;
-    list-style: none;
-}
-.sek{
-    padding: 11px;
-    margin: 10px;
-    background-color: #415b41;
-    color: #d5ddcd;
-    border-radius: 12px;
-    padding-left: 30px;
-    padding-right: 30px;
-    transition: background-color 0.15s;
-}
-.sek:hover{
-    background-color: #d5ddcd;
-    color: #233833;
-}
-.login{
-    margin-right: 20px;
-    display: flex;
-    flex-direction: row;
-    justify-content: end;
-    list-style: none;
-}
 .log{
-    padding: 11px;
-    margin: 10px;
+    margin: 15px;
+    margin-top: 25px;
     background-color:#233833;
     color: #d5ddcd;
-    border-radius: 12px;
+    border-radius: 13px;
     transition: background-color 0.15s;
+    width: 120px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .log:hover{
-    background-color: #d5ddcd;
-    color: #233833;
+    background-color: #9aab89;
 }
 footer{
     background-color: #9aab89;

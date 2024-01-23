@@ -8,23 +8,13 @@
         <link href="https://fonts.googleapis.com/css2?family=Vidaloka&display=swap" rel="stylesheet">
     </head>
     <body >
-        <header>
-            <div class="title"> 
-                <a href="../Faqja e pare/The Daily Gazette.php"><h1><i>The Daily Gazette</i></h1></a>
-            </div>
-            <div class="menu">
-            <ul class="sektoret">
-                <li class="sek"><a href="../Faqja e pare/The Daily Gazette.php">Home</a></li>
-                <li class="sek"><a href="../International News/International News.php">International</a></li>
-                <li class="sek"><a href="../Culture News/Culture news.php">Culture</a></li>
-                <li class="sek"><a href="../Sports News/Sports News.php">Sports</a></li>
-            </ul>
-            <ul class="login">
-                <li class="log"><a href="../Log in/logIn.php">Log in</a></li>
-                <li class="log"><a href="">Subscribe</a></li>
-            </ul>
-            </div>
-        </header>
+    <header>
+        <div class="title"> 
+            <a href="../Faqja e pare/The Daily Gazette.php"><h1><i>The Daily Gazette</i></h1></a>
+        </div>
+        <div class="log"><a href="../Log in/logIn.php">Log in</a></div>
+        
+    </header>
 
         <main>
             
@@ -118,7 +108,7 @@
                 <div class="box">
                     <h6>Order Summary</h6>
                     <h3>All Access Subscription</h3>
-                    <p>Unlimited digital access to The Daily Gazette</p>
+                    <p><b>Subscribe</b> for unlimited digital access to The Daily Gazette</p>
                 </div>
                 <div class="box">
                     <p>Welcome offer           <b>0.50€</b> for the first month</p>

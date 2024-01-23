@@ -284,3 +284,12 @@ footer{
         padding-left: 25px;
     }
 }
+.hideDash{
+    display: none;
+}
+.hideLog{
+    display: none;
+}
+.hideWrite{
+    display: none;
+}

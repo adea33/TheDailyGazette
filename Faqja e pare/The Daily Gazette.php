@@ -1,6 +1,45 @@
+<?php
+  session_start();
+
+    $hideDash="";
+    $hideLog="";
+    $hideWrite="";
+    if(empty($_SESSION['role'])){
+    $hideLog = "hideLog";
+    $hideDash = "hideDash";
+    $hideWrite = "hideWrite";
+
+    }else{
+        $hideLog = "";
+        if($_SESSION['role'] == "admin"){
+            $hideDash = "";
+            $hideWrite = "";
+        }else{
+            $hideDash = "hideDash";
+            $hideWrite = "hideWrite";
+        }
+    }
+ 
+?>
+
+<?php
+/*
+  if(!isset($_SESSION['username']))
+    header("location: ../Log in/logIn.php");
+  else{
+    
+    if($_SESSION['role'] == "admin"){
+      $hideDash = "";
+    }else{
+      $hideDash = "hide";
+    */
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Daily Gazette</title>
     <link rel="stylesheet" href="daily.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -14,21 +53,24 @@
         </div>
         <div class="menu">
         <ul class="sektoret">
-            <li class="sek"><a href="The Daily Gazette.php">Home</a></li>
-            <li class="sek"><a href="../International News/International News.php">International</a></li>
-            <li class="sek"><a href="../Culture News/Culture news.php">Culture</a></li>
-            <li class="sek"><a href="../Sports News/Sports News.php">Sports</a></li>
+            <li class="sek"><a href="The Daily Gazette.php" >Home</a></li>
+            <li class="sek"><a href="../International News/International News.php" class="linkClass" onclick="redirect()">International</a></li>
+            <li class="sek"><a href="../Culture News/Culture news.php" class="linkClass" onclick="redirect()">Culture</a></li>
+            <li class="sek"><a href="../Sports News/Sports News.php" class="linkClass" onclick="redirect()">Sports</a></li>
         </ul>
         <ul class="login">
             <li class="log"><a href="../Log in/logIn.php">Log in</a></li>
             <li class="log"><a href="../Subscribe/Subscribe.php">Subscribe</a></li>
+            <div class="<?php echo $hideDash ?>"><li class="log"><a href="dashboard.php">Dashboard</a></li></div>
+            <div class="<?php echo $hideWrite ?>"><li class="log"><a href="../WriteArticle/WriteArticle.php">Write Article</a></li></div>
+            <div class="<?php echo $hideLog ?>"><li class="log"><a href="../Log in/LogOut.php">Log Out</a></li></div>
         </ul>
         </div>
     </header>
     <main>
         <div class="box">
             <div class="rubrika">
-                    <a href="../International News/International News.php">
+                <a href="../International News/International News.php" class="linkClass" onclick="redirect()">
                         <div class="text">
                             <h3>International News</h3>
                             <h4> A look into the long history of the Israeli-Palestinian conflict</h4>
@@ -40,8 +82,8 @@
                         </div>    
                         <div class="images">
                             <img src="1.jpg" alt="foto" class="img">
-                        </div>
-                        </a>   
+                        </div>  
+                </a>   
             </div>
             <div class="weather-widget">
                 <div id="w1">
@@ -101,7 +143,7 @@
                     </div>
             </div>
             <div class="rubrika">
-                        <a href="../Culture News/Culture news.php">
+                        <a href="../Culture News/Culture news.php" class="linkClass" onclick="redirect()">
                         <div class="text">
                             <h3>Culture News</h3>
                             <h4>Vatican Museums Open Ancient Roman Necropolis to the Public for the First Time</h4>
@@ -120,7 +162,7 @@
 
         <div class="box">
             <div class="rubrika">
-                    <a href="../Sports News/Sports News.php">
+                    <a href="../Sports News/Sports News.php" class="linkClass" onclick="redirect()">
                         <div class="text">
                             <h3>Sports News</h3>
                             <h4>Manchester United are planning to offload at least 10 players in the next two transfer windows, according to reports.</h4>
@@ -216,6 +258,28 @@ function nextSlide() {
         }
         var imageIndex = 0;
         setInterval(changeImage, 3500);
+
+
+
+        function redirect(){
+            if (<?php echo empty($_SESSION['role']) ? 'true' : 'false'; ?>){
+                
+                window.location.href = "../Subscribe/Subscribe.php";
+            }
+            else{
+                echo("pse kjo");
+            }
+        }
+
+        var links = document.getElementsByClassName('linkClass');
+
+        if (<?php echo empty($_SESSION['role']) ? 'true' : 'false'; ?>){
+           for (var i = 0; i < links.length; i++) {
+            links[i].addEventListener('click', function(event) {
+                event.preventDefault();
+            });
+             }
+        }
 
       </script>
       

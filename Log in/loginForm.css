@@ -4,48 +4,41 @@ body{
     justify-content: center;
     background-color: #f1f4ee;
     flex-direction: column;
-    flex-wrap: wrap;
     font-family: Vidaloka;
+}
+header{
+    display: flex;
+    flex-direction: row;
+}
+.log{
+    margin: 15px;
+    margin-top: 25px;
+    background-color:#233833;
+    color: #d5ddcd;
+    border-radius: 13px;
+    transition: background-color 0.15s;
+    width: 120px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 350px;
+
+}
+.log:hover{
+    background-color: #9aab89;
 }
 .title{
     font-size: large;
     display:flex;
     justify-content: center;
     color: #233833;
-}
-.sektoret{
-    display: flex;
-    flex-direction: row;
-    justify-content: end;
-    list-style: none;
-    padding-left: 200px;
-}
-.sek{
-    
-    padding: 10px;
-    margin: 10px;
-    margin-right: 50px;
-    background-color: #415b41;
-    color: #d5ddcd;
-    border-radius: 12px;
-    padding-left: 60px;
-    padding-right: 60px;
-    font-size: large;
-    transition: background-color 0.15s;
-}
-.sek:hover{
-    background-color: #d5ddcd;
-    color: #233833;
-    border: solid;
-    border-color: #233833;
-    list-style: none;
+    padding-left: 500px;
 }
 a{
     text-decoration: none;
     color: inherit;
 }
-
-
 .margjina{
     margin-top: 20px;
     margin-bottom: 30px;
@@ -57,11 +50,11 @@ a{
     text-align: left;
     box-shadow: 2px 2px #415b41;
 }
-h4, h1{
+.margjina h4, h1{
     display: flex;
     justify-content: center;
 }
-b
+
 .tekstet input{
     
     width:300px;
@@ -83,6 +76,7 @@ footer{
     bottom: 0;
     left: 0;
     right: 0;
+    width: 1500px;
     
 }
 .f{
