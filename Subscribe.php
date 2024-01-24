@@ -1,3 +1,27 @@
+<?php 
+
+include_once 'userat.php';
+include_once 'userRepository.php';
+
+if (isset($_POST['submitbtn'])) {
+    $email = $_POST['email'];
+    $password = $_POST['password'];
+    $confirmpassword = $_POST['confirmpassword'];
+    $firstname = $_POST['firstname'];
+    $lastname = $_POST['lastname'];
+    $cardNumber = $_POST['vardNumber'];
+    $cvc = $_POST['cvc'];
+    $muaji = $_POST['muaji'];
+    $viti=$_POST['viti'];
+
+    $user= new userat($email, $password, $confirmpassword ,$firstname, $lastname, $cardNumber, $cvc, $muaji , $viti);
+
+    $userRepository = new userRepository();
+    $userRepository->insertUsers($user);
+    
+}
+?>
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -36,7 +60,7 @@
             <div class="row">
             <div class="first">
             <div class="sub">
-                <form id="subscribe" onsubmit="return validimi()">
+                <form id="subscribe" onsubmit="return validimi()" action="<?php echo $SERVER['PHP_SELF']?>" method="post">
                     <div class="input">
                         <h4><b>Email</b></h4>
                         <p> <input type="text" placeholder="email"  id="email" required></p>
