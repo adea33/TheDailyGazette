@@ -21,19 +21,6 @@
     }
  
 ?>
-
-<?php
-/*
-  if(!isset($_SESSION['username']))
-    header("location: ../Log in/logIn.php");
-  else{
-    
-    if($_SESSION['role'] == "admin"){
-      $hideDash = "";
-    }else{
-      $hideDash = "hide";
-    */
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>

@@ -154,11 +154,11 @@ hr{
     justify-content: space-around;
 }
 .foto2{
-    width: 350px;
-    height: 230px;
+    width: 300px;
+    height: 200px;
     margin: 10px;
     padding-right: 50px;
-    padding-left: 50px;
+    padding-left: 80px;
     display: flex;
     align-items: center;
 }
@@ -285,9 +285,6 @@ footer{
     }
 }
 .hideDash{
-    display: none;
-}
-.hideLog{
     display: none;
 }
 .hideWrite{

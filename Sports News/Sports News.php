@@ -2,16 +2,11 @@
   session_start();
 
     $hideDash="";
-    $hideLog="";
     $hideWrite="";
-    
-    if(empty($_SESSION['role'])){
-    $hideLog = "hideLog";
-    $hideDash = "hideDash";
-    $hideWrite = "hideWrite";
 
+    if(empty($_SESSION['role'])){
+    header("location: ../Subscribe/Subscribe.php");
     }else{
-        $hideLog = "";
         if($_SESSION['role'] == "admin"){
             $hideDash = "";
             $hideWrite = "";
@@ -20,7 +15,6 @@
             $hideWrite = "hideWrite";
         }
     }
- 
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -48,7 +42,7 @@
             <li class="log"><a href="../Subscribe/Subscribe.php">Subscribe</a></li>
             <div class="<?php echo $hideDash ?>"><li class="log"><a href="dashboard.php">Dashboard</a></li></div>
             <div class="<?php echo $hideWrite ?>"><li class="log"><a href="../WriteArticle/WriteArticle.php">Write Article</a></li></div>
-            <div class="<?php echo $hideLog ?>"><li class="log"><a href="../Log in/LogOut.php">Log Out</a></li></div>
+            <li class="log"><a href="../Log in/LogOut.php">Log Out</a></li>
         </ul>
         </div>
     </header>
