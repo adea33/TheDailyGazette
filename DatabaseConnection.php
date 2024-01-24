@@ -8,10 +8,10 @@ class DatabaseConnection{
 
     public function startConnection(){
         if(!$conn=mysqli_connect($this->server, $this->username,$this->password,$this->database)){
-            echo "Lidhje deshtoi";
+            
             return null;
         }else{
-            echo "Suksese";
+             
             return $conn;
         }
     }
