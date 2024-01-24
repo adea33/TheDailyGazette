@@ -72,21 +72,19 @@
         </form>
     </div>    
     <script>
-        document.addEventListener("DOMContentLoaded");
+        document.addEventListener("DOMContentLoaded", function() {});
 function validimi(){
     
    
-    var email=document.getElementById('username').value;
+    var username=document.getElementById('username').value;
     var password=document.getElementById('password').value;
 
     
     if((username.includes("@")) ){
         alert('Shkruani nje username valide!');
-        return false;
     }
     else{
         alert('Ju u loguat me sukses');
-        return true;
     }
 }
     </script>

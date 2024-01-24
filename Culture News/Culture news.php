@@ -106,13 +106,6 @@
                                 For Hamilton, and many graphic designers, dealing with new technology is nothing new — it’s core to the evolution of their creative profession, dating back all the way to the democratization of printing, through the introduction of computers, the birth of the internet, and the prevalence of social media. “Graphic design is a fairly young profession. Originally we were tradespeople (printers, typesetters, sign painters) and our common understanding of design is tightly tied to both the popularization of advertising and the technological revolution,” Hamilton said.</p>
                         </div>
                     </div>
-                    <div class="box" id="s">
-                        <div class="subscribe">
-                            <h3>Want to read more?</h3>
-                            <h3>Subscribe to The Daily Gazette for <br>the best International, Culture and Sports news</h3>
-                        </div>
-                        <div><a href="../Subscribe/Subscribe.php" class="sub">Subscribe</a></div>
-                    </div>
                 </div>
             </div>   
         </main>

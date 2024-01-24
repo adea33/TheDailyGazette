@@ -283,6 +283,15 @@ footer{
         padding-top: 0px;
         padding-left: 25px;
     }
+    .sek{
+        font-size: 0.8em;
+        justify-content: center;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    .log{
+        font-size: 0.8em;
+    }
 }
 .hideDash{
     display: none;

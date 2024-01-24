@@ -117,7 +117,22 @@ footer{
     flex-direction: row;
     justify-content: space-around;
 }
-
+@media screen and (max-width: 1024px) {
+    body{
+    display: flex;
+    flex-wrap: wrap;
+    }
+    .log{
+        font-size: 0.8em;
+        margin-left: 100px;
+    }
+    footer{
+        width: auto;
+    }
+    .title{
+        padding-left: 300px;
+    }
+}
 
 
   

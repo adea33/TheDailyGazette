@@ -267,6 +267,9 @@ main{
     .in{
         width: 400px;
     }
+    .title {
+        padding-left: 400px;
+    }
 }
 
 .row{

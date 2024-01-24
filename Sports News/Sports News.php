@@ -92,13 +92,6 @@
                     </div>
                     <img src="clark.png" alt="foto" class="foto1">
                 </div>
-                <div class="box" id="s">
-                    <div class="subscribe">
-                        <h3>Want to read more?</h3>
-                        <h3>Subscribe to The Daily Gazette for <br>the best International, Culture and Sports news</h3>
-                    </div>
-                    <div><a href="../Subscribe/Subscribe.php" class="sub">Subscribe</a></div>
-                </div>
             </div>
             <div class="col2">
                 <img src="uefa.webp" alt="foto" class="foto2">

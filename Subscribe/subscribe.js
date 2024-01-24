@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded");
+document.addEventListener("DOMContentLoaded", function() {});
 
 function validimi() {
     let nRegex=/^[A-Z][a-z]{3,8}$/;

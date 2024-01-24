@@ -177,15 +177,24 @@ hr{
     }
     .foto2{
         width: 340px;
-        height: auto;
+        height: 200px;
         margin: 10px;
+        align-self: center;
+    }
+    .sek{
+        font-size: 0.8em;
+        justify-content: center;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    .log{
+        font-size: 0.8em;
     }
 }
 
 #s{
     display: flex;
     flex-direction: row;
-    border-bottom: none;
 }
 .subscribe{
     font-style: italic;
