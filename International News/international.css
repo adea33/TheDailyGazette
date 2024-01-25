@@ -267,9 +267,6 @@ footer{
     flex-direction: row;
     justify-content: space-around;
 }
-.hideDash{
-    display: none;
-}
 .hideWrite{
     display: none;
 }

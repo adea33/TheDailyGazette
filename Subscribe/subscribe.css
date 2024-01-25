@@ -67,6 +67,12 @@ body{
     outline: none;
     text-align: center;
 }
+#muaji{
+    background-color: #d5ddcd;
+}
+#viti{
+    background-color: #d5ddcd;
+}
 .name{
     display: flex;
     
