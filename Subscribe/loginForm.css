@@ -1,0 +1,139 @@
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f1f4ee;
+    flex-direction: column;
+    font-family: Vidaloka;
+}
+header{
+    display: flex;
+    flex-direction: row;
+}
+.log{
+    margin: 15px;
+    margin-top: 25px;
+    background-color:#233833;
+    color: #d5ddcd;
+    border-radius: 13px;
+    transition: background-color 0.15s;
+    width: 120px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 350px;
+
+}
+.log:hover{
+    background-color: #9aab89;
+}
+.title{
+    font-size: large;
+    display:flex;
+    justify-content: center;
+    color: #233833;
+    padding-left: 500px;
+}
+a{
+    text-decoration: none;
+    color: inherit;
+}
+.margjina{
+    margin-top: 20px;
+    margin-bottom: 30px;
+    display: flex;
+    justify-content:center ;
+    align-items: center;
+    background-color:#9aab89;
+    width:750px;
+    text-align: left;
+    box-shadow: 2px 2px #415b41;
+}
+.margjina h4, h1{
+    display: flex;
+    justify-content: center;
+}
+
+.tekstet input{
+    
+    width:300px;
+    height: 30px;
+    border-radius: 5px;
+    background-color: #d5ddcd; ;
+    border: solid 1px;
+    outline: none;
+}
+.tekstet input::placeholder{
+    font-size: 14px;
+    color:#233833;
+}
+
+footer{
+    background-color: #9aab89;
+    margin-top: 30px;
+    position: static;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 1500px;
+    
+}
+.f{
+    color:#233833;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+.ff{
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+.a{
+    display: flex;
+    justify-content: center;
+    margin:10px;
+    height: 25px;
+    width: 25px;
+}
+.footermain{
+    color: #d5ddcd;
+    display: flex;
+    justify-content: space-around;
+
+}
+.footerleft{
+    display:flex;
+    flex-wrap: wrap;
+    width:300px;
+}
+.footerright{
+    margin-left: 150px;
+}
+.fundi{
+    color: #d5ddcd;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+@media screen and (max-width: 1024px) {
+    body{
+    display: flex;
+    flex-wrap: wrap;
+    }
+    .log{
+        font-size: 0.8em;
+        margin-left: 100px;
+    }
+    footer{
+        width: auto;
+    }
+    .title{
+        padding-left: 300px;
+    }
+}
+
+
+  
+

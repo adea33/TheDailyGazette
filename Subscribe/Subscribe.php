@@ -1,3 +1,27 @@
+<?php
+include_once 'user.php';
+include_once 'userRepository.php';
+
+if (isset($_POST['submitbtn'])) {
+    
+    $email = $_POST['email'];
+    $password = $_POST['password'];
+    $confirmpassword = $_POST['confirmpassword'];
+    $firstname = $_POST['firstname'];
+    $lastname = $_POST['lastname'];
+    $cardnumber = $_POST['cardnumber'];
+    $cvc = $_POST['cvc'];
+    $muaji = $_POST['muaji'];
+    $viti = $_POST['viti'];
+
+    $useri = new user($email, $password, $confirmpassword, $firstname, $lastname, $cardnumber, $cvc, $muaji, $viti);
+
+    $userrep = new userRepository();
+    $userrep->insertUser($useri);
+    header("location:logIn.php");
+}
+?>
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -26,17 +50,17 @@
             <div class="row">
             <div class="first">
             <div class="sub">
-                <form id="subscribe" onsubmit="return validimi()">
+                <form id="subscribe" onsubmit="return validimi()" action="Subscribe.php" method="post">
                     <div class="input">
                         <h4><b>Email</b></h4>
-                        <p> <input type="text" placeholder="email"  id="email" required></p>
+                        <p> <input type="text" placeholder="email"  id="email" name="email" required></p>
                     </div>
             
                     <div class="input">
                         <h4><b>Password</b></h4>
-                        <p><input type="password" placeholder="******"   id="password" required></p>
+                        <p><input type="password" placeholder="******"   id="password" name="password" required></p>
                         <h4><b>Confirm Password</b></h4>
-                        <p><input type="password" placeholder="******"   id="confirmpassword" required></p>
+                        <p><input type="password" placeholder="******"   id="confirmpassword"  name="confirmpassword" required></p>
                     </div>
             
                 <div class="name">
@@ -44,24 +68,24 @@
                    
                     
                     <div class="input">
-                    <input type="text" name="" id="name" placeholder="first name" >
+                    <input type="text"  id="name" placeholder="first name" name="firstname" >
                     </div>
                     </div>
                     <div class="emri"> <h4>Last Name</h4>
                         <div class="input">
-                            <input type="text" id="lastname" placeholder="last name">
+                            <input type="text" id="lastname" placeholder="last name" name="lastname">
                         </div>
                     </div>
                 </div>
                 <div class="card">
                     <div class="emri"><h4>Card numer</h4>
                     <div class="input">
-                        <input type="number" placeholder="card number" id="cardNumber" required>
+                        <input type="number" placeholder="card number" id="cardNumber" name="cardnumber" required>
                     </div>
                     </div>
                     <div class="emri"><h4>CVC</h4>
                     <div class="input">
-                        <input type="password" placeholder="CVC" id="cvc" required>
+                        <input type="password" placeholder="CVC" id="cvc" name="cvc" required>
                     </div>
                 </div>
                 </div>
@@ -84,10 +108,10 @@
                         </select>
                         <div class="input">
                             <select name="viti" id="viti">
-                                <option value="">2024</option>
-                                <option value="">2025</option>
-                                <option value="">2026</option>
-                                <option value="">2027</option>
+                                <option value="2024">2024</option>
+                                <option value="2025">2025</option>
+                                <option value="2026">2026</option>
+                                <option value="2027">2027</option>
                             </select>
                         </div>
                     </div>
@@ -98,7 +122,7 @@
                     </div>
                 </div>
 
-                <p class="input"><input type="submit" value="Confirm"></p>
+                <p class="input"><input type="submit" value="Confirm" name="submitbtn"></p>
             </div>
             </form>
 
