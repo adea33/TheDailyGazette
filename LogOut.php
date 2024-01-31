@@ -3,5 +3,5 @@
 
   session_destroy();
 
-  header("location: logIn.php");
-
+  header("location:logIn.php");
+?>
