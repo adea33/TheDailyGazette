@@ -1,24 +1,24 @@
-<?php 
-
-include_once 'userat.php';
+<?php
+include_once 'user.php';
 include_once 'userRepository.php';
 
 if (isset($_POST['submitbtn'])) {
+    
     $email = $_POST['email'];
     $password = $_POST['password'];
     $confirmpassword = $_POST['confirmpassword'];
     $firstname = $_POST['firstname'];
     $lastname = $_POST['lastname'];
-    $cardNumber = $_POST['vardNumber'];
+    $cardnumber = $_POST['cardnumber'];
     $cvc = $_POST['cvc'];
     $muaji = $_POST['muaji'];
-    $viti=$_POST['viti'];
+    $viti = $_POST['viti'];
 
-    $user= new userat($email, $password, $confirmpassword ,$firstname, $lastname, $cardNumber, $cvc, $muaji , $viti);
+    $useri = new user($email, $password, $confirmpassword, $firstname, $lastname, $cardnumber, $cvc, $muaji, $viti);
 
-    $userRepository = new userRepository();
-    $userRepository->insertUsers($user);
-    
+    $userrep = new userRepository();
+    $userrep->insertUser($useri);
+    header("location:logIn.php");
 }
 ?>
 
@@ -32,23 +32,13 @@ if (isset($_POST['submitbtn'])) {
         <link href="https://fonts.googleapis.com/css2?family=Vidaloka&display=swap" rel="stylesheet">
     </head>
     <body >
-        <header>
-            <div class="title"> 
-                <a href="../Faqja e pare/The Daily Gazette.php"><h1><i>The Daily Gazette</i></h1></a>
-            </div>
-            <div class="menu">
-            <ul class="sektoret">
-                <li class="sek"><a href="../Faqja e pare/The Daily Gazette.php">Home</a></li>
-                <li class="sek"><a href="../International News/International News.php">International</a></li>
-                <li class="sek"><a href="../Culture News/Culture news.php">Culture</a></li>
-                <li class="sek"><a href="../Sports News/Sports News.php">Sports</a></li>
-            </ul>
-            <ul class="login">
-                <li class="log"><a href="../Log in/logIn.php">Log in</a></li>
-                <li class="log"><a href="">Subscribe</a></li>
-            </ul>
-            </div>
-        </header>
+    <header>
+        <div class="title"> 
+            <a href="../Faqja e pare/The Daily Gazette.php"><h1><i>The Daily Gazette</i></h1></a>
+        </div>
+        <div class="log"><a href="../Log in/logIn.php">Log in</a></div>
+        
+    </header>
 
         <main>
             
@@ -60,17 +50,17 @@ if (isset($_POST['submitbtn'])) {
             <div class="row">
             <div class="first">
             <div class="sub">
-                <form id="subscribe" onsubmit="return validimi()" action="<?php echo $SERVER['PHP_SELF']?>" method="post">
+                <form id="subscribe" onsubmit="return validimi()" action="Subscribe.php" method="post">
                     <div class="input">
                         <h4><b>Email</b></h4>
-                        <p> <input type="text" placeholder="email"  id="email" required></p>
+                        <p> <input type="text" placeholder="email"  id="email" name="email" required></p>
                     </div>
             
                     <div class="input">
                         <h4><b>Password</b></h4>
-                        <p><input type="password" placeholder="******"   id="password" required></p>
+                        <p><input type="password" placeholder="******"   id="password" name="password" required></p>
                         <h4><b>Confirm Password</b></h4>
-                        <p><input type="password" placeholder="******"   id="confirmpassword" required></p>
+                        <p><input type="password" placeholder="******"   id="confirmpassword"  name="confirmpassword" required></p>
                     </div>
             
                 <div class="name">
@@ -78,24 +68,24 @@ if (isset($_POST['submitbtn'])) {
                    
                     
                     <div class="input">
-                    <input type="text" name="" id="name" placeholder="first name" >
+                    <input type="text"  id="name" placeholder="first name" name="firstname" >
                     </div>
                     </div>
                     <div class="emri"> <h4>Last Name</h4>
                         <div class="input">
-                            <input type="text" id="lastname" placeholder="last name">
+                            <input type="text" id="lastname" placeholder="last name" name="lastname">
                         </div>
                     </div>
                 </div>
                 <div class="card">
                     <div class="emri"><h4>Card numer</h4>
                     <div class="input">
-                        <input type="number" placeholder="card number" id="cardNumber" required>
+                        <input type="number" placeholder="card number" id="cardNumber" name="cardnumber" required>
                     </div>
                     </div>
                     <div class="emri"><h4>CVC</h4>
                     <div class="input">
-                        <input type="password" placeholder="CVC" id="cvc" required>
+                        <input type="password" placeholder="CVC" id="cvc" name="cvc" required>
                     </div>
                 </div>
                 </div>
@@ -118,10 +108,10 @@ if (isset($_POST['submitbtn'])) {
                         </select>
                         <div class="input">
                             <select name="viti" id="viti">
-                                <option value="">2024</option>
-                                <option value="">2025</option>
-                                <option value="">2026</option>
-                                <option value="">2027</option>
+                                <option value="2024">2024</option>
+                                <option value="2025">2025</option>
+                                <option value="2026">2026</option>
+                                <option value="2027">2027</option>
                             </select>
                         </div>
                     </div>
@@ -132,7 +122,7 @@ if (isset($_POST['submitbtn'])) {
                     </div>
                 </div>
 
-                <p class="input"><input type="submit" value="Confirm"></p>
+                <p class="input"><input type="submit" value="Confirm" name="submitbtn"></p>
             </div>
             </form>
 
@@ -142,7 +132,7 @@ if (isset($_POST['submitbtn'])) {
                 <div class="box">
                     <h6>Order Summary</h6>
                     <h3>All Access Subscription</h3>
-                    <p>Unlimited digital access to The Daily Gazette</p>
+                    <p><b>Subscribe</b> for unlimited digital access to The Daily Gazette</p>
                 </div>
                 <div class="box">
                     <p>Welcome offer           <b>0.50€</b> for the first month</p>
