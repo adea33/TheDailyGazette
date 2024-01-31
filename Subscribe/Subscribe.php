@@ -18,7 +18,6 @@ if (isset($_POST['submitbtn'])) {
 
     $userrep = new userRepository();
     $userrep->insertUser($useri);
-    header("location:logIn.php");
 }
 ?>
 

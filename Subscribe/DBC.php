@@ -4,7 +4,9 @@ class DBC{
     private $host="localhost";
     private $username="root";
     private $password="";
+    
     private $db="projekti";
+    
 
     function startConnection(){
         try{

@@ -2,16 +2,24 @@
   session_start();
 
     $hideWrite="";
+    $hideDel="";
 
     if(empty($_SESSION['role'])){
     header("location: ../Subscribe/Subscribe.php");
     }else{
         if($_SESSION['role'] == "admin"){
             $hideWrite = "";
+            $hideDel="";
         }else{
             $hideWrite = "hideWrite";
+            $hideDel="hideDel";
         }
     }
+
+    include_once '../NewsRepository.php';
+
+    $newsRepo = new NewsRepository();
+    $newsList = $newsRepo->getAllNews();
 ?>
 <!DOCTYPE html>
 <html>
@@ -51,58 +59,72 @@
             </div>
 
             <div class="first">
-                <div class="col2">
-                    <div class="box2">
-                        <div class="sdi">
-                            <h3>South Korea's City of Books</h3>
-                            <p id="text">With some 900 book-related businesses, Paju Book City, northwest of Seoul, is an intentional and euphoric celebration of books and the bookmaking process.</p>
-                        </div>
-                        <img src="bc.jpg" alt="foto" class="foto2">
-                    </div>
-                    <div class="box2">
-                        <div class="sdi">
-                            <h3>Netflix’s ‘Squid Game: The Challenge’ turns dystopian drama into real-life competition — minus the death</h3>
-                            <p id="text">When it was first announced, Netflix’s “Squid Game: The Challenge” faced backlash for its premise. Critics online called out the irony of creating a spinoff of the popular South Korean drama, which follows contestants who are burdened with immense debt as they risk death to participate in competitions that involve twisted and violent children’s games. 
-                                But on Wednesday, when the competition debuted its first five episodes, the show was met with initial enthusiasm online from many viewers. Some online likened it to other popular competition shows, like the long-running CBS series “Survivor.” Others started posting about how they are already rooting for or against specific players.
-                                While critics have pointed out an irony in the way the reality show capitalizes off of a series rooted in anti-capitalist commentary, some viewers say they just see it as a form of genuine entertainment. Reviewers described it as "downright addicting" and "pretty fun to watch."“I wasn’t there to just go sit in the corner and hope to win the $4 million,” said Bryton Constantin, 23, known as Player No. 432 on the show, 
-                                who dropped out of his last semester of college in Clemson, South Carolina, to participate in the games.</p>
-                        </div>
-                        <img src="sg.webp" alt="foto" class="foto2">
-                    </div>
-                </div>
-                <div class="col1">
-                    <div class="box">
-                        <img src="foto.webp" alt="foto" class="foto1">
-                        <div>
-                            <h3>See the photos that made National Geographic’s ‘Pictures of the Year’</h3>
-                            <p>Some 165 photographers working on assignment for National Geographic shot more than 2.1 million images in 2023.
-                                Now, 29 are featured in its annual “Pictures of the Year” retrospective.                      
-                                The feature — published in the magazine’s December issue and online in November — contains “stunning photographs that unearth remarkable, rarely seen moments,” according to National Geographic.                              
-                                The full collection shows moments of joy and silence, celebrations of tradition and science, and the exploration of Earth and outer space. He photographed this one in its “final stage of life,” according to National Geographic — after it had reproduced and lost hundreds of tentacles, which are said to resemble a lion’s mane.</p>
-                        </div>
-                    </div>
-                    <div class="box">
-                        <img src="ts.jpg" alt="foto" class="foto1">
-                        <div class="sdi">
-                            <h3>Taylor Swift announces ’1989 (Taylor’s Version)’ is coming. Here’s what we know</h3>
-                            <p>Taylor Swift’s re-release of her “1989” album is officially on its way to your ears.
-                                The multi-hyphenate musician announced on Aug. 9 during a concert at SoFi Stadium in Inglewood, California, that the next “Taylor’s Version” re-recording will be of her “1989” album, which was originally released in October 2014.                       
-                                During the surprise song portion of the show, at 11:09 pm PT, Swift announced to the audience that she was going to re-release the “1989” album, before launching into a rendition of “New Romantics.”
-                                She gestured to the screen behind her, which showed the new art for the record and added that it will drop on Oct. 27.
-                                A few minutes later, Swift’s official social media accounts shared the news as well.</p>
-                        </div>
-                    </div>
-                    <div class="box">
-                        <img src="ai.jpg" alt="foto" style="height: 390px; width: 300px; margin: 10px;">
-                        <div>
-                            <h3>Why graphic designers think generative A.I. needs them as much as they need it</h3>
-                            <p>As generative artificial intelligence programs producing images, such as OpenAI’s DALL-E, Midjourney and Adobe
-                                ’s Firefly take off, graphic designers — many of whom operate as sole proprietorships — can’t ignore the usefulness of a tool that helps them to better meet the endless demand for visual content. But amid fears that AI will supplant creative professionals, they are exploiting a current limitation in the technology: the results are only as good as the human mind prompting the A.I. programs.
-                                “The advances in AI affecting the world of graphic design are much of the same advances we’re seeing elsewhere,” said Nicola Hamilton, president of the Association of Registered Graphic Designers. “ChatGPT is becoming increasingly capable of doing our writing and planning, while Midjourney and DALL-E are creating pretty advanced artwork when given the right prompts,” she said.
-                                For Hamilton, and many graphic designers, dealing with new technology is nothing new — it’s core to the evolution of their creative profession, dating back all the way to the democratization of printing, through the introduction of computers, the birth of the internet, and the prevalence of social media. “Graphic design is a fairly young profession. Originally we were tradespeople (printers, typesetters, sign painters) and our common understanding of design is tightly tied to both the popularization of advertising and the technological revolution,” Hamilton said.</p>
-                        </div>
-                    </div>
-                </div>
+            <?php
+            echo "<div class='col2'>";
+                    foreach ($newsList as $newsItem) {            
+                        if(!($newsItem['id'] %2 == 0) && $newsItem['category'] == 'culture'){
+                        
+                            echo "<div class='box2'>";
+                                echo "<div class='box2sdi'>";
+                                    echo "<h3>" . htmlspecialchars($newsItem['title']) . "</h3>";
+                                    echo "<p>" . htmlspecialchars($newsItem['text']) . "</p>";
+                                    echo "<div class='delete-btn2'>";
+                                        echo"<span>";
+                                            echo "<p>Author: " . htmlspecialchars($newsItem['name']) . " " . htmlspecialchars($newsItem['lastName']) . "</p>";
+                                            echo "<p>Date: " . htmlspecialchars($newsItem['date']) . "</p>";
+                                        echo"</span>";
+                                        echo "<form method='POST' action='../WriteArticle/DeleteNews.php'>";
+                                        echo "<input type='hidden' name='news_id' value='" . $newsItem['id'] . "'>";
+                                        echo "<div class='". $hideDel ."'>";
+                                        echo "<button class='delete-btn' type='submit' name='delete' onclick='return confirm(\"Are you sure you want to delete this article?\");'>Delete Article</button>";
+                                        echo "</div>";
+                                        echo "</form>";
+                                    echo "</div>";
+                                echo "</div>";
+
+                                
+                                if (!empty($newsItem['img'])) {
+                                    echo "<img src='../WriteArticle/" . htmlspecialchars($newsItem['img']) . "' alt='News Images' class='foto2'>";
+                                }else{
+                                    echo "false qr";
+                                }
+                                
+                                         
+                            echo "</div>";
+                        }
+                    }
+                echo "</div>";
+
+                echo "<div class='col1'>";
+                    foreach ($newsList as $newsItem) {
+                        if($newsItem['id'] %2 ==0 && $newsItem['category'] == 'culture'){
+                            echo "<div class='box'>";
+                                echo "<div class='sdi'>";
+                                    echo "<h3>" . htmlspecialchars($newsItem['title']) . "</h3>";
+                                    echo "<p>" . htmlspecialchars($newsItem['text']) . "</p>";
+                                    echo"<span>";
+                                    echo "<p>Author: " . htmlspecialchars($newsItem['name']) . " " . htmlspecialchars($newsItem['lastName']) . "</p>";
+                                    echo "<p>Date: " . htmlspecialchars($newsItem['date']) . "</p>";
+                                    echo"</span>";
+                                echo "</div>";
+
+                                echo "<div class='foto-box'>";
+                                if (!empty($newsItem['img'])) {
+                                    echo "<img src='../WriteArticle/" . htmlspecialchars($newsItem['img']) . "' alt='News Images' class='foto1'>";
+                                }else{
+                                    echo "false qr";
+                                }
+                                echo "<form method='POST' action='../WriteArticle/DeleteNews.php'>";
+                                echo "<input type='hidden' name='news_id' value='" . $newsItem['id'] . "'>";
+                                echo "<div class='". $hideDel ."'>";
+                                echo "<button class='delete-btn' type='submit' name='delete' onclick='return confirm(\"Are you sure you want to delete this article?\");'>Delete Article</button>";
+                                echo "</div>";echo "</form>";
+                                echo "</div>";
+                            echo "</div>";
+                        }
+                    }
+                echo "</div>";
+                ?>
             </div>   
         </main>
 

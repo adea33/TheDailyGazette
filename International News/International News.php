@@ -2,16 +2,26 @@
   session_start();
 
     $hideWrite="";
+    $hideDel="";
     
     if(empty($_SESSION['role'])){
     header("location: ../Subscribe/Subscribe.php");
     }else{
         if($_SESSION['role'] == "admin"){
             $hideWrite = "";
+            $hideDel="";
         }else{
             $hideWrite = "hideWrite";
+            $hideDel= "hideDel";
         }
     }
+
+    
+
+    include_once '../NewsRepository.php';
+
+    $newsRepo = new NewsRepository();
+    $newsList = $newsRepo->getAllNews();
 ?>
 
 <!DOCTYPE html>
@@ -52,54 +62,72 @@
             </div>
 
             <div class="first">
-                <div class="col1">
-                    <div class="box">
-                        <div class="sdi">
-                            <h3>Was Peace Between Israelis and Palestinians Ever Possible?</h3>
-                            <p id="text">Prime Minister Benjamin Netanyahu on Tuesday night called for the Israeli government to back a proposed deal to exchange some of the captives held in Gaza for Palestinian prisoners held by Israel, an agreement that would entail a brief pause in the 46-day war. “Tonight we stand before a difficult decision, but it is the right decision. All security organizations support it fully,” Mr. Netanyahu said in televised remarks on Tuesday night. He added, “The war has its stages, and the release of the hostages has its stages as well. But we won’t rest until we achieve total victory, and until we bring everyone back.”</p>
-                        </div>
-                        <img src="1.webp" alt="foto" class="foto1">
-                    </div>
-                    <div class="box">
-                        <div class="sdi">
-                            <h3>Sierra Leone declares nationwide curfew after gunmen attack military barracks</h3>
-                            <p id="text">Sierra Leone’s president has declared a nationwide curfew after gunmen attacked the West African country's main military barracks in the capital and then broke into detention centers and abducted or freed the occupants.  Several gunmen attacked major detention centers in the Sierra Leonean capital city on Sunday and freed or abducted inmates, moments after targeting the country’s main military barracks, a government spokesman said. The detention centers, including the Pademba Road Prisons — holding more than 2,000 inmates — were attacked just as security forces fought to restore calm during sustained shootouts at the military barracks, according to Information Minister Chernor Bah. “The prisons were overrun (and) some prisoners were abducted by the assailants while many others were released,” Bah said. Security forces managed to “push back” the assailants to the outskirts of the city where fighting continues, he added.
-                                Sierra Leone’s President Julius Maada Bio earlier declared a nationwide curfew in response to the attacks.”</p>
-                        </div>
-                        <img src="12.avif" alt="foto" class="foto1">
-                    </div>
-                    <div class="box">
-                        <div class="sdi">
-                            <h3>Inside the northern Ukraine training center where units learn to fight Russian drones</h3>
-                            <p id="text">KYIV, Ukraine -- In a secret location in Northern Ukraine sits one of the country's biggest training centers for mobile air defense units.
-                                In the large open-air area, soldiers train to shoot drones with machine and anti-aircraft guns mounted on pick-up trucks. Some of those weapons are at least two times older than the young Ukrainian soldiers who are learning to operate them.
-                                "Everything we have, every help we get, we use it to create mobile fire groups to fill every inch of space here," Lieutenant General Serhii Nayev, responsible for Ukraine's Northern border defense, told ABC News during a recent visit to the training center.
-                                 More than 600 miles long, the border touches both Belarus and Russia. With winter coming, here in the North, there is no fog of war, apart from half a million mines, according to Nayev. But the real threat comes from the air.
-                                 Far from towns and prying eyes, Ukrainian instructors are launching dummy drones -- a central part of the training for mobile air defense crews. It is an imitation of defending against attacks from the Russian’s Iranian-made Shahed drones -- a daily routine for Ukrainian air defense forces.</p>
-                        </div>
-                        <img src="5.avif" alt="foto" class="foto1">
-                    </div>
-                </div>
-                <div class="col2">
-                    <div class="box2">
-                        <img src="2.webp" alt="foto" class="foto2">
-                        <div class="box2sdi">
-                            <h3>Iceland volcano eruption likelihood remains high, possibly within 'just days'</h3>
-                            <p>The likelihood that a volcanic eruption will engulf the fishing town of Grindavik, Iceland, is decreasing by the day, officials said on Friday, even as they continued to warn that an eruption could still occur.
-                                Grindavik, with more than 3,000 people, was evacuated this month after it was determined that a nine-mile-long underground river of magma was moving beneath the town to the ocean.
-                                Residents are now allowed to go home during the day to check on their properties and belongings but until scientists give the all-clear, people cannot permanently return, Jon Thor Viglundsson, a spokesman for Iceland’s Department of Civil Protection and Emergency Management, said.
-                                Seismic activity has caused Grindavik to sink and has damaged the sewage system. As a result, the town cannot access cold water, he said. “Sewage is a problem, and sewage lines are ruptured,” he added.</p>
-                        </div>
-                    </div>
-                    <div class="box2">
-                        <img src="8.avif" alt="foto" class="foto2">
-                        <div class="box2sdi">
-                            <h3>Ecuador's newly sworn-in president repeals guidelines allowing people to carry limited drug amounts</h3>
-                            <p>Less than 48 hours into his term, Ecuador President Daniel Noboa on Friday repealed controversial guidelines established by the country’s left a decade ago that eliminated penalties for people found carrying illegal drugs under certain amounts.
-                                Noboa’s decision fulfilled a campaign promise to fight drug trafficking. Consequences of the illegal trade, particularly cocaine, have kept Ecuadorians on edge as killings, kidnappings, robberies, extortion and other crimes reached unprecedented levels.</p>
-                        </div>
-                    </div>
-                </div>
+                <?php
+                    echo "<div class='col1'>";
+                        foreach ($newsList as $newsItem) {
+                            if(!($newsItem['id'] %2 ==0) && $newsItem['category'] == 'international'){
+                                echo "<div class='box'>";
+                                    echo "<div class='sdi'>";
+                                        echo "<h3>" . htmlspecialchars($newsItem['title']) . "</h3>";
+                                        echo "<p>" . htmlspecialchars($newsItem['text']) . "</p>";
+                                        echo"<span>";
+                                        echo "<p>Author: " . htmlspecialchars($newsItem['name']) . " " . htmlspecialchars($newsItem['lastName']) . "</p>";
+                                        echo "<p>Date: " . htmlspecialchars($newsItem['date']) . "</p>";
+                                        echo"</span>";
+                                    echo "</div>";
+
+                                    echo "<div class='foto-box'>";
+                                    if (!empty($newsItem['img'])) {
+                                        echo "<img src='../WriteArticle/" . htmlspecialchars($newsItem['img']) . "' alt='News Images' class='foto1'>";
+                                    }else{
+                                        echo "false qr";
+                                    }
+                                    echo "<form method='POST' action='../WriteArticle/DeleteNews.php'>";
+                                    echo "<input type='hidden' name='news_id' value='" . $newsItem['id'] . "'>";
+                                    echo "<div class='". $hideDel ."'>";
+                                    echo "<button class='delete-btn' type='submit' name='delete' onclick='return confirm(\"Are you sure you want to delete this article?\");'>Delete Article</button>";
+                                    echo "</div>";echo "</form>";
+                                    echo "</div>";
+                                echo "</div>";
+                            }
+                        }
+                    echo "</div>";
+                    
+                    echo "<div class='col2'>";
+                        foreach ($newsList as $newsItem) {            
+                            if($newsItem['id'] %2 ==0 && $newsItem['category'] == 'international'){
+                            
+                                echo "<div class='box2'>";
+                                    echo "<div class='box2sdi'>";
+                                        echo "<h3>" . htmlspecialchars($newsItem['title']) . "</h3>";
+                                        echo "<p>" . htmlspecialchars($newsItem['text']) . "</p>";
+                                        echo "<div class='delete-btn2'>";
+                                            echo"<span>";
+                                                echo "<p>Author: " . htmlspecialchars($newsItem['name']) . " " . htmlspecialchars($newsItem['lastName']) . "</p>";
+                                                echo "<p>Date: " . htmlspecialchars($newsItem['date']) . "</p>";
+                                            echo"</span>";
+                                            echo "<form method='POST' action='../WriteArticle/DeleteNews.php'>";
+                                            echo "<input type='hidden' name='news_id' value='" . $newsItem['id'] . "'>";
+                                            echo "<div class='". $hideDel ."'>";
+                                            echo "<button class='delete-btn' type='submit' name='delete' onclick='return confirm(\"Are you sure you want to delete this article?\");'>Delete Article</button>";
+                                            echo "</div>";
+                                            echo "</form>";
+                                        echo "</div>";
+                                    echo "</div>";
+
+                                    
+                                    if (!empty($newsItem['img'])) {
+                                        echo "<img src='../WriteArticle/" . htmlspecialchars($newsItem['img']) . "' alt='News Images' class='foto2'>";
+                                    }else{
+                                        echo "false qr";
+                                    }
+                                    
+                                            
+                                echo "</div>";
+                            }
+                        }
+                    echo "</div>";
+                ?>
             </div>   
         </main>
 

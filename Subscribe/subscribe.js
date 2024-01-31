@@ -43,6 +43,7 @@ function validimi() {
         return;
     } else {
         alert("Keni subscribe me sukses");
+        window.location.href = "logIn.php";
         return;
     }
 }

@@ -79,13 +79,15 @@ function validimi(){
     var username=document.getElementById('username').value;
     var password=document.getElementById('password').value;
 
-    
-    if((username.includes("@")) ){
+    /*
+    if(!(username.includes("@"))){
         alert('Shkruani nje username valide!');
     }
     else{
         alert('Ju u loguat me sukses');
     }
+    */
+    
 }
     </script>
 </body>

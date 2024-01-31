@@ -40,12 +40,13 @@
             $users = $statement->fetchAll();
             return $users;
         }
+        
         public function editUser($id, $email, $password, $confirmpassword, $firstname,$lastname, $cardNumber, $cvc, $muaji, $viti){
             $conn = $this->connection;
             $sql = "UPDATE user SET email=?,password=?, confirmpassword=?, firstname=?,lastname=?,cardNumber=?,cvc=?,muaji=?, viti=? WHERE ID   =?";
 
             $statement = $conn->prepare($sql);
-            $statement->execute([$user->getEmail(), $$user->getPassword(), $user->getConfirmPassword(),
+            $statement->execute([$user->getEmail(), $user->getPassword(), $user->getConfirmPassword(),
             $user->getFirstName(),$user->getLastName(), $user->getCardNumber(), $user->getCVC(), $user->getMuaji(),$user->getViti(), $ID]);
 
             echo "<script>alert('U ndryshua me sukses!')</script>";

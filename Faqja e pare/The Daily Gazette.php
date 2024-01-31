@@ -15,7 +15,11 @@
             $hideWrite = "hideWrite";
         }
     }
- 
+    
+    include_once '../NewsRepository.php';
+
+    $newsRepo = new NewsRepository();
+    $newsList = $newsRepo->getAllNews();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -51,22 +55,38 @@
     </header>
     <main>
         <div class="box">
+
             <div class="rubrika">
                 <a href="../International News/International News.php" class="linkClass" onclick="redirect()">
-                        <div class="text">
-                            <h3>International News</h3>
-                            <h4> A look into the long history of the Israeli-Palestinian conflict</h4>
-                            <p>The Hamas terrorist attack on Israel this weekend comes amid the backdrop of a longstanding history of conflict over 
-                            land and independence that has plagued the region...</p>
-                            <h4>Iceland volcano eruption likelihood remains high, possibly within 'just days'</h4>
-                            <p>Icelandic officials earlier this month declared a state of emergency
-                            near the Mount Fagradalsfjall ...</p>
-                        </div>    
-                        <div class="images">
-                            <img src="1.jpg" alt="foto" class="img">
-                        </div>  
+                    <?php
+                    
+                        
+                        for ($i = 0; $i < count($newsList); $i++) {
+                            if (isset($newsList[$i])) {
+                                $newsItem = $newsList[$i];
+                                if($newsItem['category'] == 'international'){
+                                        echo "<div class='sdi'>";
+                                        echo "<h3>International News</h3>";
+                                            echo "<h3>" . htmlspecialchars($newsItem['title']) . "</h3>";
+                                            echo "<p>" . htmlspecialchars($newsItem['text']) . "</p>";
+                                            echo"<span>";
+                                            echo "<p>Author: " . htmlspecialchars($newsItem['name']) . " " . htmlspecialchars($newsItem['lastName']) . "</p>";
+                                            echo "<p>Date: " . htmlspecialchars($newsItem['date']) . "</p>";
+                                            echo"</span>";
+                                        echo "</div>";
+                                    
+                                    if (!empty($newsItem['img'])) {
+                                        echo "<img src='../WriteArticle/" . htmlspecialchars($newsItem['img']) . "' alt='News Images' class='img'>";
+                                    }
+                                    break;
+                                }
+                            }
+                        }
+                    
+                    ?>
                 </a>   
             </div>
+
             <div class="weather-widget">
                 <div id="w1">
                     <div class="weather-icon">
@@ -124,39 +144,66 @@
                         <button class="next-btn" onclick="nextSlide()">></button>
                     </div>
             </div>
+            
             <div class="rubrika">
-                        <a href="../Culture News/Culture news.php" class="linkClass" onclick="redirect()">
-                        <div class="text">
-                            <h3>Culture News</h3>
-                            <h4>Vatican Museums Open Ancient Roman Necropolis to the Public for the First Time</h4>
-                            <p>The ancient Roman burial ground lies beneath Vatican City, and is replete with marble sarcophagi, open burial graves,
-                            and Roman mosaics and frescoes...</p>
-                            <h4>The Art World’s Winter Happenings to Add to Your Calendar</h4>
-                            <p>Exhibitions, Books, and Music to Look Forward to in Winter 2023-24.</p>
-                        </div>    
-                        <div class="images">
-                            <img src="2.jpg" alt="foto" class="img">
-                        </div>
-                        </a>
-                     
+                <a href="../Culture News/Culture news.php" class="linkClass" onclick="redirect()">
+                    <?php   
+                        for ($j = 0; $j < count($newsList); $j++) {
+                            if (isset($newsList[$j]) && $newsList[$j]['category'] == 'culture') {
+                                $newsItem = $newsList[$j]; 
+                                    echo "<div class='sdi'>";
+                                        echo "<h3>Culture News</h3>";
+                                        echo "<h3>" . htmlspecialchars($newsItem['title']) . "</h3>";
+                                        echo "<p>" . htmlspecialchars($newsItem['text']) . "</p>";
+                                        echo"<span>";
+                                        echo "<p>Author: " . htmlspecialchars($newsItem['name']) . " " . htmlspecialchars($newsItem['lastName']) . "</p>";
+                                        echo "<p>Date: " . htmlspecialchars($newsItem['date']) . "</p>";
+                                        echo"</span>";
+                                    echo "</div>";
+
+                                    if (!empty($newsItem['img'])) {
+                                        echo "<img src='../WriteArticle/" . htmlspecialchars($newsItem['img']) . "' alt='News Images' class='img'>";
+                                    }
+                                    break; 
+                            }
+                        } 
+                    ?>
+                    
+                </a>
             </div>
         </div>
 
         <div class="box">
             <div class="rubrika">
                     <a href="../Sports News/Sports News.php" class="linkClass" onclick="redirect()">
-                        <div class="text">
-                            <h3>Sports News</h3>
-                            <h4>Manchester United are planning to offload at least 10 players in the next two transfer windows, according to reports.</h4>
-                            <p>Man United 'are planning a major clearout in 2024', with the club 'set to offload at least TEN players across the two transfer windows' in a bid to help Erik ten Hag reshape his squad</p>
-                            <h4>World Ice Skating Day is Dec. 3</h4>
-                            <p>This event promises an array of global celebrations that showcase ice skating sports...</p>
-                        </div>    
-                        <div class="images">
-                            <img src="3.jfif" alt="foto" class="img">
-                        </div>
+                        
+                    <?php
+                    
+                        for ($k = 0; $k < count($newsList); $k++) {
+                            if (isset($newsList[$k]) && $newsList[$k]['category'] == 'sports') {
+                                $newsItem = $newsList[$k];
+                                    echo "<div class='sdi'>";
+                                        echo "<h3>Culture News</h3>";
+                                        echo "<h3>" . htmlspecialchars($newsItem['title']) . "</h3>";
+                                        echo "<p>" . htmlspecialchars($newsItem['text']) . "</p>";
+                                        echo"<span>";
+                                        echo "<p>Author: " . htmlspecialchars($newsItem['name']) . " " . htmlspecialchars($newsItem['lastName']) . "</p>";
+                                        echo "<p>Date: " . htmlspecialchars($newsItem['date']) . "</p>";
+                                        echo"</span>";
+                                    echo "</div>";
+
+                                    if (!empty($newsItem['img'])) {
+                                        echo "<img src='../WriteArticle/" . htmlspecialchars($newsItem['img']) . "' alt='News Images' class='img'>";
+                                    }
+                                    break;
+                                
+                            }
+                        }
+                    ?>
+
                     </a>
             </div>
+            
             <div class="book-widget">
                 <div class="">
                     <div id="recs"><h3><i>Book recommendations</i></h3></div>
@@ -168,6 +215,7 @@
                 </div>
             </div>
         </div>
+
     </main>
     <footer>
         <div class="f">
@@ -197,73 +245,71 @@
             <p>Copyright 2023 The Daily Gazette Company. All rights reserved.</p>
         </div>
     </footer>
-
-    <script>
-let CIndex = 0;
-
-const slides = document.querySelectorAll('.slider div');
-
-function showSlide(index2) {
-    if (index2 < 0) {
-        CIndex = slides.length - 1;
-    } 
-    else if (index2 >= slides.length) {
-        CIndex = 0;
-    }
-    else {
-        CIndex = index2;
-    }
-
-    slides.forEach((slide, i) => {
-        slide.classList.toggle('active', i === CIndex);
-    });
-}
-
-showSlide(0);
-
-function nextSlide() {
-    showSlide(CIndex + 1);
-
-}
-
-        function changeImage() {
-          var images = document.getElementsByClassName('image');
-      
-          for (var i = 0; i < images.length; i++) {
-            images[i].style.display = 'none';
-          }
-      
-          var currentIndex = (imageIndex + 1) % images.length;
-          images[currentIndex].style.display = 'block';
-      
-          imageIndex = currentIndex;
-        }
-        var imageIndex = 0;
-        setInterval(changeImage, 3500);
-
-
-
-        function redirect(){
-            if (<?php echo empty($_SESSION['role']) ? 'true' : 'false'; ?>){
                 
-                window.location.href = "../Subscribe/Subscribe.php";
-            }
-            else{
-                echo("pse kjo");
-            }
-        }
+    <script>
+        let CIndex = 0;
 
-        var links = document.getElementsByClassName('linkClass');
+        const slides = document.querySelectorAll('.slider div');
 
-        if (<?php echo empty($_SESSION['role']) ? 'true' : 'false'; ?>){
-           for (var i = 0; i < links.length; i++) {
-            links[i].addEventListener('click', function(event) {
-                event.preventDefault();
+        function showSlide(index2) {
+            if (index2 < 0) {
+                CIndex = slides.length - 1;
+            } 
+            else if (index2 >= slides.length) {
+                CIndex = 0;
+            }
+            else {
+                CIndex = index2;
+            }
+
+            slides.forEach((slide, i) => {
+                slide.classList.toggle('active', i === CIndex);
             });
-             }
         }
+
+        showSlide(0);
+
+        function nextSlide() {
+            showSlide(CIndex + 1);
+
+        }
+
+                function changeImage() {
+                var images = document.getElementsByClassName('image');
+            
+                for (var i = 0; i < images.length; i++) {
+                    images[i].style.display = 'none';
+                }
+            
+                var currentIndex = (imageIndex + 1) % images.length;
+                images[currentIndex].style.display = 'block';
+            
+                imageIndex = currentIndex;
+                }
+                var imageIndex = 0;
+                setInterval(changeImage, 3500);
+
+                function redirect(){
+                    if (<?php echo empty($_SESSION['role']) ? 'true' : 'false'; ?>){
+                        
+                        window.location.href = "../Subscribe/Subscribe.php";
+                    }
+                    else{
+                        echo("pse kjo");
+                    }
+                }
+
+                var links = document.getElementsByClassName('linkClass');
+
+                if (<?php echo empty($_SESSION['role']) ? 'true' : 'false'; ?>){
+                for (var i = 0; i < links.length; i++) {
+                    links[i].addEventListener('click', function(event) {
+                        event.preventDefault();
+                    });
+                    }
+                }
 
       </script>
-      
+    
 </body>
 </html>

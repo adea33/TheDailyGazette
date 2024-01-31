@@ -1,4 +1,38 @@
 <?php
+include_once '../DatabaseConnectionNews.php';
+include_once '../News.php';
+include_once '../NewsRepository.php';
+
+if (isset($_POST['submitbtn'])) {
+
+    $imgPath = ''; 
+    
+    if (isset($_FILES['img']) && $_FILES['img']['error'] == UPLOAD_ERR_OK) {
+        $imgFile = $_FILES['img'];
+        $targetDir = "images/";
+        $targetFile = $targetDir . basename($imgFile['name']);
+
+
+        if (move_uploaded_file($imgFile['tmp_name'], $targetFile)) {
+            $imgPath = $targetFile;
+        } else {
+            echo "Sorry, there was an error uploading your file.";
+        }
+    }
+
+    $title = $_POST['title'];
+    $text = $_POST['text'];
+    $category = $_POST['category'];
+    $name = $_POST['name'];
+    $lastName = $_POST['lastName'];
+    $date = $_POST['date'];
+
+
+    $newsArticle = new News($title, $text, $imgPath,$category, $name, $lastName, $date);
+
+    $newsrep = new NewsRepository;
+    $newsrep->insertNews($newsArticle);
+}
 
 ?>
 
@@ -30,69 +64,49 @@
             
             <div class="first">
             
-                <form id="subscribe" onsubmit="return validimi()" enctype="multipart/form-data">
+                <form id="subscribe" onsubmit="return validimi()" action="WriteArticle.php" method="post" enctype="multipart/form-data">
                     <div class="sub">
                         <div class="input">
                             <h4><b>Title</b></h4>
-                            <p> <input type="text" placeholder="Title"  required></p>
+                            <p> <input type="text" placeholder="Title" name="title" required></p>
                         </div>
 
                         <div class="name">
                             <div class="emri"><h4>Article text</h4>
                                 <div class="input">
-                                <textarea name="message" rows="10" cols="40" placeholder="Text article"></textarea>
+                                <textarea name="text" rows="10" cols="40" placeholder="Text article" required></textarea>
                                 </div>
                             </div>
                         </div>
                         <div class="name">
                             <div><h4>Article image</h4>
                                 <div class="input">
-                                <input class="foto-input" type="file" accept="image/*" />
+                                <input class="foto-input" name="img" type="file" accept="image/*"/>
                                 </div>
                             </div>
+                        </div>
+                        <div class="input">
+                            <h4><b>Category</b></h4>
+                            <p> <input type="text" placeholder="Category" name="category" required></p>
                         </div>
                         <div class="name">
                             <div class="emri"><h4>First Name</h4>
                                 <div class="input">
-                                    <input type="text" name="" id="name" placeholder="first name" >
+                                    <input type="text" name="name" id="name" placeholder="first name" required>
                                 </div>
                             </div>
                             <div class="emri"> <h4>Last Name</h4>
                                 <div class="input">
-                                    <input type="text" id="lastname" placeholder="last name">
+                                    <input type="text" id="lastname" placeholder="last name" name="lastName" required>
                                 </div>
                             </div>
                         </div>
-                    
-                        <div class="date">
+                        <div class="input">
                             <h4>Date</h4>
-                            <div class="data">
-                                <select name="muaji" id="muaji">
-                                    <option value="janar">Jan</option>
-                                    <option value="shkurt">Feb</option>
-                                    <option value="mars">Mar</option>
-                                    <option value="prill">Apr</option>
-                                    <option value="maj">May</option>
-                                    <option value="qershor">Jun</option>
-                                    <option value="korrik">Jul</option>
-                                    <option value="gusht">Aug</option>
-                                    <option value="shtator">Sep</option>
-                                    <option value="tetor">Oct</option>
-                                    <option value="nentor">Nov</option>
-                                    <option value="dhjetor">Dec</option>
-                                </select>
-                                <div class="input">
-                                    <select name="viti" id="viti">
-                                        <option value="">2024</option>
-                                        <option value="">2025</option>
-                                        <option value="">2026</option>
-                                        <option value="">2027</option>
-                                    </select>
-                                </div>
-                            </div>
+                            <input type="date" id="date" name="date">
                         </div>
 
-                    <p class="input"><input type="submit" value="Confirm"></p>
+                    <p class="input"><input type="submit" value="Confirm" name="submitbtn"></p>
                     </div>
                 </form>
             </div>

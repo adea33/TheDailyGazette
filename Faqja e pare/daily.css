@@ -106,6 +106,10 @@ hr{
     border-radius: 4px;
     padding: 5px;
     width: 300px;
+    height: 200px;
+    object-fit: cover;
+    align-self: center;
+    justify-self: center;
 }
 .images{
     display: flex;
@@ -279,6 +283,9 @@ div.active {
 }
 .p{
     color: #d5ddcd;
+}
+p{
+    font-size: 0.85em;
 }
 
 

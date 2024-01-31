@@ -85,8 +85,6 @@ hr{
     border-color: #233833;
     margin-top: 40px;
 }
-
-
 .first{
     display: flex;
     flex-direction: row;
@@ -144,6 +142,8 @@ hr{
     width: 300px;
     height: 200px;
     margin: 10px;
+    object-fit: cover;
+
 }
 
 .box2{
@@ -156,6 +156,7 @@ hr{
     width: 400px;
     height: 230px;
     margin: 10px;
+    object-fit: cover;
 }
 #s{
     display: flex;
@@ -165,9 +166,12 @@ hr{
 @media screen and (max-width: 1024px){
     .box2{  
         flex-direction: row;
-        justify-content: center;
+        justify-content: space-around;
         padding-left: 500px;
-        width: 700px;
+        width: 900px;
+    }
+    .box2sdi{
+        width:auto;
     }
     .sdi{
         display: flex;
@@ -216,6 +220,28 @@ hr{
 }
 
 
+.foto-box{
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    align-items: center;
+}
+.delete-btn{
+    padding: 15px;
+    background-color:#233833;
+    color: #d5ddcd;
+    border-radius: 12px;
+    margin: 20px;
+    transition: background-color 0.15s;
+}
+.delete-btn:hover{
+    background-color: #3e5a53;
+}
+.delete-btn2{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
 
 
 .permifooter{
@@ -268,5 +294,8 @@ footer{
     justify-content: space-around;
 }
 .hideWrite{
+    display: none;
+}
+.hideDel{
     display: none;
 }

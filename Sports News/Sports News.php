@@ -2,16 +2,24 @@
   session_start();
 
     $hideWrite="";
+    $hideDel="";
 
     if(empty($_SESSION['role'])){
     header("location: ../Subscribe/Subscribe.php");
     }else{
         if($_SESSION['role'] == "admin"){
             $hideWrite = "";
+            $hideDel="";
         }else{
             $hideWrite = "hideWrite";
+            $hideDel="hideDel";
         }
     }
+
+    include_once '../NewsRepository.php';
+
+    $newsRepo = new NewsRepository();
+    $newsList = $newsRepo->getAllNews();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -50,45 +58,41 @@
                 <hr class="in">
             </div>
         <div class="first">
-            <div class="col1">
-                <div class="box">
-                    <div class="sdi">
-                        <h3>Chiefs' Travis Kelce makes franchise history in win over Raiders</h3>
-                        <p id="text">Travis Kelce appeared to be back to his dominant self in the Kansas City Chiefs’ 31-17 win over the Las Vegas Raiders on Sunday.
-                            Kelce had six catches for 91 yards and separated himself from other receivers in franchise history.<br>
-                            The team said Kelce went over the 11,000-yard receiving mark with one of his catches during the game.
-                             He became the first Chiefs player to ever achieve the milestone. He also became the fastest tight end 
-                             to reach the mark in NFL history and the 17th quickest player of any position to hit the milestone.</p>
-                    </div>
-                    <img src="travis.png" alt="foto" class="foto1">
-                </div>
-                <div class="box">
-                    <div class="sdi">
-                        <h3>Man Utd Player of the Season 2023-24 power rankings</h3>
-                        <p id="text">What's that noise in the distance? It's the sound of Manchester United's quiet resurgence. After making their worst start to a season since 1989, the Red Devils are back on track.<br>
+            <?php    
+                echo "<div class='col1'>";
+                    foreach ($newsList as $newsItem) {
+                        if($newsItem['category'] == 'sports'){
+                            echo "<div class='box'>";
+                                echo "<div class='sdi'>";
+                                    echo "<h3>" . htmlspecialchars($newsItem['title']) . "</h3>";
+                                    echo "<p>" . htmlspecialchars($newsItem['text']) . "</p>";
+                                    echo"<span>";
+                                    echo "<p>Author: " . htmlspecialchars($newsItem['name']) . " " . htmlspecialchars($newsItem['lastName']) . "</p>";
+                                    echo "<p>Date: " . htmlspecialchars($newsItem['date']) . "</p>";
+                                    echo"</span>";
+                                echo "</div>";
 
-                            At times it has felt like they have been crawling their way back rather than being on the march,
-                             but the statistics don't lie: Erik ten Hag's side are the most in-form team in the Premier League, with five wins in their last six matches.
-                             They have climbed from 10th up to sixth, just six points behind leaders Arsenal and five from Manchester City.</p>
-                    </div>
-                    <img src="man.png" alt="foto" class="foto1">
-                </div>
-                <div class="box">
-                    <div class="sdi">
-                        <h3>Caitlin Clark scores 32 points as Iowa avenges loss to Kansas State</h3>
-                        <p id="text">Iowa basketball and star senior Caitlin Clark were not going to lose to Kansas State. <br>
+                                echo "<div class='foto-box'>";
+                                if (!empty($newsItem['img'])) {
+                                    echo "<img src='../WriteArticle/" . htmlspecialchars($newsItem['img']) . "' alt='News Images' class='foto1'>";
+                                }else{
+                                    echo "false qr";
+                                }
+                                echo "<form method='POST' action='../WriteArticle/DeleteNews.php'>";
+                                echo "<input type='hidden' name='news_id' value='" . $newsItem['id'] . "'>";
+                                echo "<div class='". $hideDel ."'>";
+                                echo "<button class='delete-btn' type='submit' name='delete' onclick='return confirm(\"Are you sure you want to delete this article?\");'>Delete Article</button>";
+                                echo "</div>";echo "</form>";
+                                echo "</div>";
+                            echo "</div>";
+                        }
+                    }
+                echo "</div>";
+            ?>
 
-                            The No. 6 Hawkeyes claimed a 77-70 victory on Sunday, winning their rematch with the Wildcats and the Gulf Coast Showcase. Kansas State had beaten Iowa just 10 days earlier in Carver-Hawkeye Arena to hand the Hawkeyes their first, and so far only, loss of the season.<br>
-                            
-                            “Kansas State is obviously a great team,” Iowa head coach Lisa Bluder said, noting that she thought the team did a “great job” of handling three games in three days as part of the Thanksgiving weekend tournament.
-                            “It feels really good to get the redemption win. We did not play very well at our place and we knew that. We were really kind of glad to have this opportunity to redeem ourselves.”<br>
 
-                            Clark, who had one of the worst outings of her career in the loss to the Wildcats, was named tournament MVP. She scored 32 points in Sunday’s revenge win, and she also contributed 5 rebounds, 6 assists and 3 steals. <br>
-                            “I’m just really proud of this group,” Clark said. “They went on a little run there in the fourth quarter again, but we just responded and stayed together.”</p>
-                    </div>
-                    <img src="clark.png" alt="foto" class="foto1">
-                </div>
-            </div>
+
+
             <div class="col2">
                 <img src="uefa.webp" alt="foto" class="foto2">
                 <div id="t">
@@ -127,6 +131,10 @@
                         </div>
                     </div>
                 </div>
+
+
+
+
             </div>   
     </main>
 

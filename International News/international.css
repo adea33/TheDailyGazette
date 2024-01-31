@@ -138,7 +138,28 @@ hr{
     justify-content: space-around;
 }
 
-
+.foto-box{
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    align-items: center;
+}
+.delete-btn{
+    padding: 15px;
+    background-color:#233833;
+    color: #d5ddcd;
+    border-radius: 12px;
+    margin: 20px;
+    transition: background-color 0.15s;
+}
+.delete-btn:hover{
+    background-color: #3e5a53;
+}
+.delete-btn2{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
 .sdi{
     display: flex;
     flex-direction: column;
@@ -268,5 +289,8 @@ footer{
     justify-content: space-around;
 }
 .hideWrite{
+    display: none;
+}
+.hideDel{
     display: none;
 }
