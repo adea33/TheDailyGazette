@@ -11,6 +11,7 @@
         private $cvc;
         private $muaji;
         private $viti;
+        private $roli;
 
         public function __construct($email, $password, $confirmpassword, $firstname, $lastname ,$cardnumber ,$cvc ,$muaji, $viti){
             $this->email=$email;
@@ -78,6 +79,9 @@
     }
     public function setViti($viti){
         $this->viti=$viti;
+    }
+    public function getRoli(){
+        return $this->roli;
     }
 
 
