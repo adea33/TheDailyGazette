@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", function() {});
 
 function validimi() {
-    let nRegex=/^[A-Z][a-z]{3,8}$/;
+    let nRegex=/^[A-Z][a-z]$/;
     let eRegex=/[a-zA-Z.-_]+@+[a-z]+\.+[a-z]{2,3}$/;
     let lRegex=/^[A-Z][a-z]{3,20}$/;
     let passRegex=/^(?=.*[A-Z])(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;

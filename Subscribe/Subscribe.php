@@ -35,7 +35,7 @@ if (isset($_POST['submitbtn'])) {
         <div class="title"> 
             <a href="../Faqja e pare/The Daily Gazette.php"><h1><i>The Daily Gazette</i></h1></a>
         </div>
-        <div class="log"><a href="../Log in/logIn.php">Log in</a></div>
+        <div class="log"><a href="../logIn.php">Log in</a></div>
         
     </header>
 

@@ -5,7 +5,7 @@ class DBC{
     private $username="root";
     private $password="";
     
-    private $db="projekti";
+    private $db="gazeta";
     
 
     function startConnection(){
