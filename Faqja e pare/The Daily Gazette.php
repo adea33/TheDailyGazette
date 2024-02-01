@@ -3,16 +3,23 @@
 
     $hideLog="";
     $hideWrite="";
-    if(empty($_SESSION['role'])){
+    $hideLS="";
+    $hideCon="";
+
+    if(empty($_SESSION['roli'])){
     $hideLog = "hideLog";
     $hideWrite = "hideWrite";
+    $hideCon="hideCon";
 
     }else{
         $hideLog = "";
-        if($_SESSION['role'] == "admin"){
+        $hideLS="hideLS";
+        if($_SESSION['roli'] == "admin"){
             $hideWrite = "";
+            $hideCon="hideCon";
         }else{
             $hideWrite = "hideWrite";
+            $hideCon="";
         }
     }
     
@@ -46,10 +53,11 @@
             <li class="sek"><a href="../Sports News/Sports News.php" class="linkClass" onclick="redirect()">Sports</a></li>
         </ul>
         <ul class="login">
-            <li class="log"><a href="../Log in/logIn.php">Log in</a></li>
-            <li class="log"><a href="../Subscribe/Subscribe.php">Subscribe</a></li>
+            <div class="<?php echo $hideLS ?>"><li class="log"><a href="../logIn.php">Log in</a></li></div>
+            <div class="<?php echo $hideLS ?>"><li class="log"><a href="../Subscribe/Subscribe.php">Subscribe</a></li></div>
             <div class="<?php echo $hideWrite ?>"><li class="log"><a href="../WriteArticle/WriteArticle.php">Write Article</a></li></div>
-            <div class="<?php echo $hideLog ?>"><li class="log"><a href="../Log in/LogOut.php">Log Out</a></li></div>
+            <div class="<?php echo $hideCon ?>"><li class="log"><a href="../ContactUs.php">Contact Us</a></li></div>
+            <div class="<?php echo $hideLog ?>"><li class="log"><a href="../LogOut.php">Log Out</a></li></div>
         </ul>
         </div>
     </header>
@@ -290,18 +298,15 @@
                 setInterval(changeImage, 3500);
 
                 function redirect(){
-                    if (<?php echo empty($_SESSION['role']) ? 'true' : 'false'; ?>){
+                    if (<?php echo empty($_SESSION['roli']) ? 'true' : 'false'; ?>){
                         
                         window.location.href = "../Subscribe/Subscribe.php";
-                    }
-                    else{
-                        echo("pse kjo");
                     }
                 }
 
                 var links = document.getElementsByClassName('linkClass');
 
-                if (<?php echo empty($_SESSION['role']) ? 'true' : 'false'; ?>){
+                if (<?php echo empty($_SESSION['roli']) ? 'true' : 'false'; ?>){
                 for (var i = 0; i < links.length; i++) {
                     links[i].addEventListener('click', function(event) {
                         event.preventDefault();

@@ -3,16 +3,21 @@
 
     $hideWrite="";
     $hideDel="";
+    $hideLS="";
+    $hideCon="";
 
-    if(empty($_SESSION['role'])){
+    if(empty($_SESSION['roli'])){
     header("location: ../Subscribe/Subscribe.php");
     }else{
-        if($_SESSION['role'] == "admin"){
+        $hideLS="hideLS";
+        if($_SESSION['roli'] == "admin"){
             $hideWrite = "";
             $hideDel="";
+            $hideCon="hideCon";
         }else{
             $hideWrite = "hideWrite";
             $hideDel="hideDel";
+            $hideCon="";
         }
     }
 
@@ -43,10 +48,11 @@
                 <li class="sek"><a href="../Sports News/Sports News.php">Sports</a></li>
             </ul>
             <ul class="login">
-                <li class="log"><a href="../Log in/logIn.php">Log in</a></li>
-                <li class="log"><a href="../Subscribe/Subscribe.php">Subscribe</a></li>
+                <div class="<?php echo $hideLS ?>"><li class="log"><a href="../logIn.php">Log in</a></li></div>
+                <div class="<?php echo $hideLS ?>"><li class="log"><a href="../Subscribe/Subscribe.php">Subscribe</a></li></div>
                 <div class="<?php echo $hideWrite ?>"><li class="log"><a href="../WriteArticle/WriteArticle.php">Write Article</a></li></div>
-                <li class="log"><a href="../Log in/LogOut.php">Log Out</a></li>
+                <div class="<?php echo $hideCon ?>"><li class="log"><a href="../ContactUs.php">Contact Us</a></li></div>
+                <li class="log"><a href="../LogOut.php">Log Out</a></li>
             </ul>
             </div>
         </header>

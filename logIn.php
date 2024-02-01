@@ -31,14 +31,13 @@ function startConnection(){
                
             
                 session_start();
-                $_SESSION['ID']=$ID;
                 $_SESSION['email'] = $email;
                 $_SESSION['password'] = $password;
                 $_SESSION['roli'] = $user['roli'];
                 $_SESSION['loginTime'] = date("H:i:s");
 
 
-                header("location:Subscribe.php");
+                header("location:Faqja e pare/The Daily Gazette.php");
                 exit();
             }else{
                 echo "Incorrect Email or Password";
@@ -65,7 +64,7 @@ function startConnection(){
 <body>
     <header>
         <div class="title"> 
-            <a href="../Faqja e pare/The Daily Gazette.php"><h1><i>The Daily Gazette</i></h1></a>
+            <a href="Faqja e pare/The Daily Gazette.php"><h1><i>The Daily Gazette</i></h1></a>
         </div>
         <div class="log"><a href="../Subscribe/Subscribe.php">Subscribe</a></div>
     </header>

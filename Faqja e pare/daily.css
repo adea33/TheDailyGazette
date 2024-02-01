@@ -314,6 +314,12 @@ p{
 .hideWrite{
     display: none;
 }
+.hideLS{
+    display: none;
+}
+.hideCon{
+    display: none;
+}
 @media screen and (max-width: 1024px) {
     body{
     display: flex;

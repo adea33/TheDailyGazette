@@ -1,6 +1,6 @@
 <?php
-include_once 'user.php';
-include_once 'userRepository.php';
+include_once '../user.php';
+include_once '../userRepository.php';
 
 if (isset($_POST['submitbtn'])) {
     
