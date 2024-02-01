@@ -16,7 +16,7 @@ if (isset($_POST['submitbtn'])) {
         if (move_uploaded_file($imgFile['tmp_name'], $targetFile)) {
             $imgPath = $targetFile;
         } else {
-            echo "Sorry, there was an error uploading your file.";
+            echo "error";
         }
     }
 

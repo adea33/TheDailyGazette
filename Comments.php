@@ -1,26 +1,16 @@
 <?php
-include_once 'DatabaseConnectionNews.php';
-include_once 'Contact.php';
+
 include_once 'ContactRepository.php';
 
-if (isset($_POST['submitbtn'])) {
-
-
-    $comment = $_POST['comment'];
-    $email = $_POST['email'];
-    
-    $contact = new contact($comment, $email);
-
-    $conrep = new ContactRepository;
-    $conrep->insertComment($contact);
-}
+    $commentRepo = new ContactRepository();
+    $commentList = $commentRepo->getAllComments();
 
 ?>
 
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Contact us | The Daily Gazette</title>
+        <title>Comments | The Daily Gazette</title>
         <link rel="stylesheet" href="contact.css">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -38,41 +28,25 @@ if (isset($_POST['submitbtn'])) {
         <main>
             
         <div class="title2">
-                <hr class="in">
-                <h2>Contact form</h2>
-                <hr class="in">
+            <hr class="in">
+            <h2>Comments</h2>
+            <hr class="in">
         </div>
             
-            <div class="first">
-            
-                <form id="subscribe" action="ContactUs.php" method="post" enctype="multipart/form-data">
-                    <div class="sub">
-                        <div class="input">
-                            <h2><b>Contact us</b></h2>
-                        </div>
-
-                        <div class="name">
-                            <div class="emri"><h4>Comment</h4>
-                                <div class="input">
-                                <textarea name="comment" rows="10" cols="40" placeholder="Write comment/complain" required></textarea>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        
-                        <div class="name">
-                            <div class="emri"><h4>Email</h4>
-                                <div class="input">
-                                    <input type="text" name="email" id="name" placeholder="email" required>
-                                </div>
-                            </div>
-                        </div>
-                        
-
-                    <p class="input"><input type="submit" value="Confirm" name="submitbtn"></p>
-                    </div>
-                </form>
+        <div class="first">
+            <div class="sub">
+                <?php
+                    echo "<div class=''>";
+                        foreach ($commentList as $commentItem) {
+                            echo "<div class='comment-box'>";
+                                echo "<p>" . htmlspecialchars($commentItem['comment']) . "</h3>";
+                                echo "<p>" . htmlspecialchars($commentItem['email']) . "</p>";
+                            echo "</div>";
+                        }
+                    echo "</div>";
+                ?>
             </div>
+        </div>
 
         </main>
         <footer>

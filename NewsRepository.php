@@ -30,14 +30,6 @@
             
             $statement->execute();
 
-            echo "<script>alert('U shtua me sukses!')</script>";
-
-        }
-        public function editNews($title, $text,$img, $category, $name,$lastName,$date){
-            $conn=$this->connection;
-
-            //$sql="UPDATE userat SET '$cardNumber'=0 WHERE cvc=0";
-
         }
 
         public function deleteNews($newsId){
@@ -51,7 +43,6 @@
             $statement->bind_param("i", $newsId);
     
             if ($statement->execute()) {
-                // News deleted successfully
                 return true;
             } else {
                 return false;

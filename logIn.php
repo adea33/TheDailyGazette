@@ -66,7 +66,7 @@ function startConnection(){
         <div class="title"> 
             <a href="Faqja e pare/The Daily Gazette.php"><h1><i>The Daily Gazette</i></h1></a>
         </div>
-        <div class="log"><a href="../Subscribe/Subscribe.php">Subscribe</a></div>
+        <div class="log"><a href="Subscribe/Subscribe.php">Subscribe</a></div>
     </header>
 
         <div class="margjina">
