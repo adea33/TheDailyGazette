@@ -1,0 +1,210 @@
+body{
+    font-family:Vidaloka;
+    background-color: #f1f4ee;
+}
+.title2{
+    font-size: large;
+    display:flex;
+    justify-content: center;
+    justify-content: space-around;
+    color: #233833;
+}
+.in{
+    height: 0.5px;
+    width: 450px;
+    border-color: #233833;
+    margin-top: 40px;
+}
+.sub{
+    width: 600px;
+    height: auto;
+    border:2px solid;
+    border-color: #233833;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 20px;
+    background-color:#9aab89;
+}
+.input input{
+    width:300px;
+    height: 30px;
+    border-radius: 5px;
+    background-color: #d5ddcd;
+    border: solid 1px;
+    outline: none;
+}
+#file-upload-button{
+    background-color: #d5ddcd;
+}
+.data {
+    width: 250px;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+}
+.data select{
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: solid 1px;
+    outline: none;
+    text-align: center;
+}
+#muaji{
+    background-color: #d5ddcd;
+}
+#viti{
+    background-color: #d5ddcd;
+}
+.name{
+    display: flex;
+    
+}
+.emri{
+    width: 100%;
+    margin-right: 10px;
+}
+.emri input{
+    width: 300px;
+}
+
+.date{
+    padding: 10px;
+}
+.body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    
+}
+h4, h1{
+    display: flex;
+    justify-content: center;
+}
+
+
+header{
+    border-radius: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+a{
+    text-decoration: none;
+    color: inherit;
+}
+.title{
+    font-size: large;
+    display:flex;
+    flex-direction: row;
+    justify-self: center;
+    color: #233833;
+    padding-left: 620px;
+}
+hr{
+    width: 500px;
+    
+}
+.menu{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.log{
+    margin: 15px;
+    margin-top: 25px;
+    background-color:#233833;
+    color: #d5ddcd;
+    border-radius: 13px;
+    transition: background-color 0.15s;
+    width: 120px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.log:hover{
+    background-color: #9aab89;
+}
+footer{
+    background-color: #9aab89;
+    margin-top: 30px;
+    position: static;
+    bottom: 0;
+    right: 0;
+    left: 0;
+}
+.f{
+    color:#233833;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+.ff{
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+.a{
+    display: flex;
+    justify-content: center;
+    margin:10px;
+    height: 25px;
+    width: 25px;
+}
+.footermain{
+    color: #d5ddcd;
+    display: flex;
+    justify-content: space-around;
+
+}
+.footerleft{
+    display:flex;
+    flex-wrap: wrap;
+    width:300px;
+}
+.footerright{
+    margin-left: 150px;
+}
+.fundi{
+    color: #d5ddcd;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+main{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+}
+.first{
+    display: flex;
+    flex-direction: row;
+    margin-top: 15px;
+}
+.box{
+    border-bottom: 0.5px solid;
+    border-color: #233833;
+    display: flex;
+    flex-direction: column;
+    width: 600px;
+    margin: 2px;
+    align-items: center;
+    justify-content: space-between;
+    text-align: center;
+    color: #233833;
+}
+@media screen and (max-width: 1024px) {
+    .box{
+        width: 300px;
+    }
+    .in{
+        width: 300px;
+    }
+    .title {
+        padding-left: 400px;
+    }
+}
