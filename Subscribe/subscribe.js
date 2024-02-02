@@ -16,34 +16,48 @@ function validimi() {
     var confirmpassword=document.getElementById('confirmpassword').value;
     var cardNumber = document.getElementById('cardNumber').value;
     var cvc = document.getElementById('cvc').value;
-
+    var valide;
 
     if(!nRegex.test(name)){
         alert("Emri nuk eshte valid");
-        return;
+        window.location.href = "Subscribe.php";
+        valide=false;
+            return;
     }else if(!eRegex.test(email)){
         alert("Email nuk eshte valid");
+        window.location.href = "Subscribe.php";
+        valide=false;
         return;
     }
     else if(!lRegex.test(lastname)){
         alert("Shkruaj nje mbiemer valid");
+        window.location.href = "Subscribe.php";
+        valide=fals;
         return;
     }
     else if(!passRegex.test(password)){
         alert("Krijo nje fjalekalim me te forte! Fjalekalimi duhet te jete se paku 8 karaktere, te permbaje shkronja lowercase, uppercase dhe karaktere (@$!%*?).");
+        window.location.href = "Subscribe.php";
+        valide=false;
         return;
     }else if(confirmpassword.trim() !== password.trim()){
         alert("Passwordi duhet te jete i njejte");
+        valide=false;
+        window.location.href = "Subscribe.php";
         return;
     }else if (!cRegex.test(cardNumber)) {
         alert("Numri i karteles nuk eshte valid");
+        window.location.href = "Subscribe.php";
+        valide=false;
         return;
     } else if (!cvcRegex.test(cvc)) {
         alert("CVC nuk eshte valid");
+        window.location.href = "Subscribe.php";
+        valide=false;
         return;
     } else {
         alert("Keni subscribe me sukses");
-        window.location.href = "logIn.php";
+        valide=true;
         return;
     }
 }

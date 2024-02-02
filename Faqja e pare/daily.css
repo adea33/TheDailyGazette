@@ -222,17 +222,16 @@ footer{
     flex-direction: column;
 
 }
-
-
 .breaking-widget {
     background-color:#9aab89;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    width: 350px;
+    width: 330px;
     height: 270px;
     text-align: center;
     display: flex;
     flex-direction: column;
+    margin-right: 15px;
 }
 .slider-container {
     position: relative;
@@ -324,6 +323,7 @@ p{
     body{
     display: flex;
     flex-wrap: wrap;
+    width: 1024px;
     }
     .sek{
         font-size: 0.8em;
@@ -338,24 +338,34 @@ p{
         width: 600px;
         font-size: 0.8em;
     }
-    .text{
-        width: 450px;
+    .sdi{
+        width: 500px;
     }
     .img{
-        width: 150px;
+        width: 200px;
     }
     .weather-widget{
         width: 280px;
         height: 280px;
+        margin-left: 100px;
+    }
+    .book-widget{
+        margin-left: 100px;
     }
     .wimg{
         width: 50px;
         height: 50px;
     }
     .breaking-widget{
-        width: 320px;
+        width: 300px;
     }
     footer{
-        width: 950px;
+        width: 1024px;
+    }
+    header{
+        width: 1024px;
+    }
+    main{
+        width: 1024px;
     }
 }

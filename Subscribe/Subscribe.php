@@ -1,8 +1,11 @@
 <?php
 include_once '../user.php';
 include_once '../userRepository.php';
+if ($_SERVER["REQUEST_METHOD"] == "POST"){
+    $valide=isset($_POST['valide'])&& $_POST['valide'] === '1';
 
-if (isset($_POST['submitbtn'])) {
+if($valide){
+    if (isset($_POST['submitbtn'])) {
     
     $email = $_POST['email'];
     $password = $_POST['password'];
@@ -14,10 +17,18 @@ if (isset($_POST['submitbtn'])) {
     $muaji = $_POST['muaji'];
     $viti = $_POST['viti'];
 
+  
     $useri = new user($email, $password, $confirmpassword, $firstname, $lastname, $cardnumber, $cvc, $muaji, $viti);
 
     $userrep = new userRepository();
     $userrep->insertUser($useri);
+    header("location:logIn.php");
+    exit();
+}
+}else{
+    header('location:Subscribe.php');
+    exit();
+}
 }
 ?>
 

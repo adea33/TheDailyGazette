@@ -132,11 +132,18 @@
         
         <div class="box">
             <div class="breaking-widget">
-                    <h2><i>Breaking News</i></h2>
+                    <h2><i>News Preview</i></h2>
                     <div class="slider-container">
                         <div class="slider">
+                        <?php
+                            foreach ($newsList as $newsItem) {
+                                echo "<div class='boxes'>";
+                                echo "<h3>" . htmlspecialchars($newsItem['title']) . "</h3>";
+                                echo "</div>";
+                            }
+                        ?>
+                    <!--
                             <div class="boxes">
-                                
                                 <h3>Suspect arrested in shooting of 3 Palestinian college students in Vermont, police say</h3>
                             </div>
                             <div class="boxes">
@@ -148,6 +155,7 @@
                             <div class="boxes">
                                 <h3>Truce gives Gazans moment to breathe – and reveals scale of devastation</h3>
                             </div>
+                    -->
                         </div>
 
                         <button class="next-btn" onclick="nextSlide()">></button>
@@ -283,37 +291,37 @@
 
         }
 
-                function changeImage() {
-                var images = document.getElementsByClassName('image');
-            
-                for (var i = 0; i < images.length; i++) {
-                    images[i].style.display = 'none';
-                }
-            
-                var currentIndex = (imageIndex + 1) % images.length;
-                images[currentIndex].style.display = 'block';
-            
-                imageIndex = currentIndex;
-                }
-                var imageIndex = 0;
-                setInterval(changeImage, 3500);
+            function changeImage() {
+            var images = document.getElementsByClassName('image');
+        
+            for (var i = 0; i < images.length; i++) {
+                images[i].style.display = 'none';
+            }
+        
+            var currentIndex = (imageIndex + 1) % images.length;
+            images[currentIndex].style.display = 'block';
+        
+            imageIndex = currentIndex;
+            }
+            var imageIndex = 0;
+            setInterval(changeImage, 3500);
 
-                function redirect(){
-                    if (<?php echo empty($_SESSION['roli']) ? 'true' : 'false'; ?>){
-                        
-                        window.location.href = "../Subscribe/Subscribe.php";
-                    }
-                }
-
-                var links = document.getElementsByClassName('linkClass');
-
+            
+            function redirect(){
                 if (<?php echo empty($_SESSION['roli']) ? 'true' : 'false'; ?>){
+                    window.location.href = "../Subscribe/Subscribe.php";
+                }
+            }
+
+            var links = document.getElementsByClassName('linkClass');
+
+            if (<?php echo empty($_SESSION['roli']) ? 'true' : 'false'; ?>){
                 for (var i = 0; i < links.length; i++) {
                     links[i].addEventListener('click', function(event) {
                         event.preventDefault();
                     });
-                    }
                 }
+            }
 
       </script>
     
